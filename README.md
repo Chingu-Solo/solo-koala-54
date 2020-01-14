@@ -5,6 +5,8 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 ----
 ## Dependancies
 - [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
+- [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+- [aphrodite](https://github.com/Khan/aphrodite)
 - [Google Fonts API](https://developers.google.com/fonts/)
 
 ---- 
@@ -24,9 +26,9 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
         - list/bar type
     -  back to top button
     -  footer
-- make controllers
-    - router
-    - fetchPopularGoogleFonts
-    - queryFonts
-- get google font api key
+- ~~make controllers~~
+    - ~~router~~
+    - ~~fetchPopularGoogleFonts~~
+    - ~~queryFonts~~
+- ~~get google font api key~~
 ----

@@ -20,14 +20,15 @@ import Articles from './pages/Articles';
 import About from './pages/About';
 
 export default function App() {
+  const [customText, setCustomText] = useState('default text');
   return (
     <Router>
       <div>
         <Header/>
-        <Nav />
+        <Nav setCustomText={setCustomText} />
         <Switch>
           <Route path="/catalog">
-            <Catalog/>
+            <Catalog customText={customText}/>
           </Route>
           <Route path="/Featured">
             <Featured />
