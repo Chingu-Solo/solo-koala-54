@@ -1,23 +1,21 @@
-import React, { useEffect } from 'react';
-// import QueryFonts from '../controllers/QueryFonts';
+import React from 'react';
 import {
     Switch,
     Route,
     useRouteMatch
   } from "react-router-dom";
-import QueryFonts from '../controllers/QueryFonts';
+import GenerateCards from '../controllers/GenerateCards';
 
 function Catalog(props) {
   let match = useRouteMatch(); // using path for query so queries can be bookmarked
-  const makeMoreCards = () => {};
   return (
     <div>
       <Switch>
         <Route path={`${match.path}/:filter`}>
-          <QueryFonts />
+           <GenerateCards />
         </Route>
         <Route path={match.path}>
-          {props.cards}
+          <GenerateCards />
         </Route>
       </Switch>
     </div>
