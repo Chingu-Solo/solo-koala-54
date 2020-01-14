@@ -29,7 +29,8 @@ export default function GenerateCards(props) {
                 cards.push(<p key={'end-of-results-message'}>End of results</p>);
                 break;
             }
-            cards.push(<Card key={data.fontList[index].family} {...data.fontList[index]}/>);
+            cards.push(<Card key={data.fontList[index].family} customText={props.customText} {...data.fontList[index]}/>);
+            // download font and add to dom?
         }  
         return cards
     }
@@ -60,7 +61,9 @@ export default function GenerateCards(props) {
                 localStorage.setItem('fontlist', JSON.stringify(data.fontList));
             }
         }
-        setCards(makeCards());
+        else {
+            setCards(makeCards());
+        }
     }, [filter]); 
     return cards
 }

@@ -12,10 +12,10 @@ function Catalog(props) {
     <div>
       <Switch>
         <Route path={`${match.path}/:filter`}>
-           <GenerateCards />
+           <GenerateCards customText={props.customText} />
         </Route>
         <Route path={match.path}>
-          <GenerateCards />
+          <GenerateCards customText={props.customText} />
         </Route>
       </Switch>
     </div>
