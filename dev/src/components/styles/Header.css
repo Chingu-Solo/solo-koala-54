@@ -1,0 +1,43 @@
+.pageHeader {
+    display: flex;
+    flex-direction: row wrap;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 5vw
+}
+.pageHeader__logo {
+    width: 50vw;
+    max-width: 320px;
+}
+.pageHeader__menu {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-template-rows: repeat(3, 1fr);
+    position: relative;
+    left: 60px;
+}
+.pageHeader__link {
+    margin-top: 6px;
+    border: 1px solid var(--main-colour);
+    border-left: none;
+    position: relative;
+    height: 22px;
+    transition: transform 0.5s;
+    text-decoration: none;
+    color: var(--main-colour);
+}
+.pageHeader__link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: -11px;
+    border-left: 5px solid var(--main-colour);
+    border-right: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.pageHeader__link--active, .pageHeader__link:hover {
+    transform: translateX(-50px);
+}
