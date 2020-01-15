@@ -21,7 +21,6 @@ export default function Card(props) {
         .then(({ data }) => {
             const fontFile = new File([data], props.family+'.ttf');
             const fontURL = URL.createObjectURL(fontFile);
-            console.log(fontFile)
             googleFont = {
                 fontFamily: props.family,
                 fontStyle: "normal",
