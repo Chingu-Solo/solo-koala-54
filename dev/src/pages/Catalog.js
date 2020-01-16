@@ -10,6 +10,7 @@ function Catalog(props) {
   let match = useRouteMatch(); // using path for query so queries can be bookmarked
   return (
     <div>
+      {props.toolbar}
       <Switch>
         <Route path={`${match.path}/:filter`}>
            <GenerateCards customText={props.customText} />

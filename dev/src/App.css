@@ -37,6 +37,10 @@
   }
 }
 
+.clickable {
+  cursor: pointer;
+}
+
 :root {
   --main-colour: #707070;
   --main-bg-colour: #ffffff;

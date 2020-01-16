@@ -21,14 +21,17 @@ import About from './pages/About';
 
 export default function App() {
   const [customText, setCustomText] = useState('default text');
+  const [fontSize, setFontSize] = useState(18);
+  const [gridView, setGridView] = useState(true);
+  const [lightTheme, setLightTheme] = useState(true);
+  const toolbar = <Nav {...{setCustomText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme}} />;
   return (
     <Router>
       <div>
         <Header/>
-        <Nav setCustomText={setCustomText} />
         <Switch>
           <Route path="/catalog">
-            <Catalog customText={customText}/>
+            <Catalog customText={customText} toolbar={toolbar}/>
           </Route>
           <Route path="/Featured">
             <Featured />

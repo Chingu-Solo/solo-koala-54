@@ -3,7 +3,8 @@ import {
     Link,
     useRouteMatch
   } from "react-router-dom";
-import logo from '../logo.svg';
+import logo from '../images/logo.svg';
+import logoCondensed from '../images/logocondensed.svg';
 import './styles/Header.css';
 
 function Header() {
@@ -12,6 +13,7 @@ function Header() {
     return (
         <header className="pageHeader">
             <img className="pageHeader__logo" src={logo} alt="Solo-Koala-54 via Google Fonts" />
+            <img className="pageHeader__logo--condensed" src={logoCondensed} alt="Solo-Koala-54 via Google Fonts" />
             <nav className="pageHeader__menu">
                 <Link className={`pageHeader__link ${match.url.match('/catalog') && 'pageHeader__link--active'}`} to="/catalog">Catalog</Link>
                 <Link className={`pageHeader__link ${match.url === '/featured' && 'pageHeader__link--active'}`} to="/featured">Featured</Link>
