@@ -3,7 +3,13 @@ import {
     useRouteMatch,
     Redirect
 } from "react-router-dom";
-
+import './styles/Nav.css';
+import gridViewIcon from '../images/gridviewicon.svg';
+import barViewIcon from '../images/barviewicon.svg';
+import darkThemeIcon from '../images/darkthemeicon.svg';
+import lightThemeIcon from '../images/lightthemeicon.svg';
+import resetIcon from '../images/reseticon.svg';
+import searchIcon from '../images/searchicon.svg';
 
 export default function Nav(props) {
     const [query, setQuery] = useState('');
@@ -14,9 +20,24 @@ export default function Nav(props) {
         setQuery(event.target.value);
     }
     return (
-        <nav>
-            <div>Search: <input type="text" onChange={search} /></div>
-            {withRedirect && <Redirect to={`${match.path}catalog/${query}`}/>}
+        <nav className="toolbar">
+            <div className="toolbar__search">
+                <img src={searchIcon} title="search" />
+                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" />
+            </div>
+             <div className="toolbar__font-control">
+                <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} type="text" placeholder="Custom Text..." />
+                <div className="toolbar__font-size">
+                    <label for="toolbar__set-font-size" className="toolbar__font-size__label">Font Size: {props.fontSize}</label>
+                    <input id="toolbar__set-font-size" onChange={event => props.setFontSize(event.target.value)} className="toolbar__set-font-size clickable" type="range" min="4" max="128" />
+                </div>
+            </div>
+            <div className="toolbar__display-control">
+                <img onClick={() => props.setGridView(!props.gridView)} className="toolbar__layout-toggle clickable" src={props.gridView ? barViewIcon : gridViewIcon} title={props.gridView ? 'Bar view' : 'Grid view'} />
+                <img onClick={() => props.setLightTheme(!props.lightTheme)} className="toolbar__theme-toggle clickable" src={props.lightTheme ? darkThemeIcon : lightThemeIcon} title={props.lightTheme ? 'Dark theme' : 'Light theme'} />
+            </div>
+            <img className="toolbar__reset clickable" src={resetIcon} title="reset" />
+            {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
         </nav>
     )
 }
