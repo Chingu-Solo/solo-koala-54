@@ -4,22 +4,22 @@ import {
     Route,
     useRouteMatch
   } from "react-router-dom";
-import GenerateCards from '../controllers/GenerateCards';
+import Main from '../components/Main';
 
 function Catalog(props) {
   let match = useRouteMatch(); // using path for query so queries can be bookmarked
-  return (
-    <div>
+  const {gridView, customText} = props;
+  return (<>
       {props.toolbar}
       <Switch>
         <Route path={`${match.path}/:filter`}>
-           <GenerateCards customText={props.customText} />
+          <Main {...{gridView, customText}} />
         </Route>
         <Route path={match.path}>
-          <GenerateCards customText={props.customText} />
+          <Main {...{gridView, customText}} />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }
 

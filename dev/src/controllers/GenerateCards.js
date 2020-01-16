@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from "react-router-dom";
 import Card from '../components/Card';
 import fetchFonts from '../controllers/fetchFonts';
 import buildSearchIndex from '../controllers/buildSearchIndex';
 import querySearch from './querySearch';
 
 export default function GenerateCards(props) {
-    let { filter } = useParams();
     const data = {
         loadNResults: 20,
         fontList: [],
@@ -16,10 +14,10 @@ export default function GenerateCards(props) {
     const makeCards = () => {
         let nCards = props.hasOwnProperty('number') ? props.number : data.loadNResults;
         let currentIndex = 'linear';
-        if (filter) {
-            currentIndex = querySearch(filter, data.searchIndex);
+        if (props.filter) {
+            currentIndex = querySearch(props.filter, data.searchIndex);
             if (currentIndex.length < 1) {
-                return <p>No matching fonts on search <q>{filter}</q></p>
+                return <p>No matching fonts on search <q>{props.filter}</q></p>
             }
         }
         let cards = [];
@@ -64,6 +62,6 @@ export default function GenerateCards(props) {
         else {
             setCards(makeCards());
         }
-    }, [filter]); 
+    }, [props.filter]); 
     return cards
 }

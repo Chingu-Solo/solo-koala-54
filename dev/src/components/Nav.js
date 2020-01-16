@@ -37,7 +37,7 @@ export default function Nav(props) {
                 <img onClick={() => props.setLightTheme(!props.lightTheme)} className="toolbar__theme-toggle clickable" src={props.lightTheme ? darkThemeIcon : lightThemeIcon} title={props.lightTheme ? 'Dark theme' : 'Light theme'} />
             </div>
             <img className="toolbar__reset clickable" src={resetIcon} title="reset" />
-            {withRedirect && <Redirect to={`${match.path}catalog/${query}`}/>}
+            {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
         </nav>
     )
 }

@@ -1,0 +1,30 @@
+.catalog {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    place-items: center center;
+    place-self: start center;
+}
+.catalog.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);  
+    max-width: 1200px;
+}
+@media only screen and (max-width: 1200px) {
+    .catalog.grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width: 920px) {
+    .catalog.grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media only screen and (max-width: 640px) {
+    .catalog.grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
