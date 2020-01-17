@@ -22,21 +22,21 @@ export default function Nav(props) {
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
-                <img src={searchIcon} title="search" />
+                <img src={searchIcon} title="search" alt="search" />
                 <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" />
             </div>
              <div className="toolbar__font-control">
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} type="text" placeholder="Custom Text..." />
                 <div className="toolbar__font-size">
-                    <label for="toolbar__set-font-size" className="toolbar__font-size__label">Font Size: {props.fontSize}</label>
+                    <label htmlFor="toolbar__set-font-size" className="toolbar__font-size__label">Font Size: {props.fontSize}</label>
                     <input id="toolbar__set-font-size" onChange={event => props.setFontSize(event.target.value)} className="toolbar__set-font-size clickable" type="range" min="4" max="128" />
                 </div>
             </div>
             <div className="toolbar__display-control">
-                <img onClick={() => props.setGridView(!props.gridView)} className="toolbar__layout-toggle clickable" src={props.gridView ? barViewIcon : gridViewIcon} title={props.gridView ? 'Bar view' : 'Grid view'} />
-                <img onClick={() => props.setLightTheme(!props.lightTheme)} className="toolbar__theme-toggle clickable" src={props.lightTheme ? darkThemeIcon : lightThemeIcon} title={props.lightTheme ? 'Dark theme' : 'Light theme'} />
+                <img onClick={() => props.setGridView(!props.gridView)} className="toolbar__layout-toggle clickable" src={props.gridView ? barViewIcon : gridViewIcon} title={props.gridView ? 'Bar view' : 'Grid view'} alt="Toggle bar/grid layout" />
+                <img onClick={() => props.setLightTheme(!props.lightTheme)} className="toolbar__theme-toggle clickable" src={props.lightTheme ? darkThemeIcon : lightThemeIcon} title={props.lightTheme ? 'Dark theme' : 'Light theme'} alt="Toggle dark/light theme" />
             </div>
-            <img className="toolbar__reset clickable" src={resetIcon} title="reset" />
+            <img className="toolbar__reset clickable" src={resetIcon} title="reset" alt="reset" />
             {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
         </nav>
     )
