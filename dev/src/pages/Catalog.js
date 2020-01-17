@@ -8,15 +8,15 @@ import Main from '../components/Main';
 
 function Catalog(props) {
   let match = useRouteMatch(); // using path for query so queries can be bookmarked
-  const {gridView, customText} = props;
+  const {fontList, searchIndex, gridView, customText} = props;
   return (<>
       {props.toolbar}
       <Switch>
         <Route path={`${match.path}/:filter`}>
-          <Main {...{gridView, customText}} />
+          <Main {...{fontList, searchIndex, gridView, customText}} />
         </Route>
         <Route path={match.path}>
-          <Main {...{gridView, customText}} />
+          <Main {...{fontList, searchIndex, gridView, customText}} />
         </Route>
       </Switch>
     </>

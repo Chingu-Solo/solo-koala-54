@@ -41,5 +41,6 @@ TODO make flow diagram here
     - ~~fetchPopularGoogleFonts~~
     - ~~queryFonts~~
     - myCollection: stores list of user added fonts
+    - bottomOfCatalogReached: loads more fonts when client is in range of page bottom
 - ~~get google font api key~~
 ----

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -6,6 +6,10 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
+
+/* controllers */
+import fetchFonts from './controllers/fetchFonts';
+import buildSearchIndex from './controllers/buildSearchIndex';
 
 /* components */
 import Header from './components/Header';
@@ -24,13 +28,23 @@ export default function App() {
   const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);
   const toolbar = <Nav {...{setCustomText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme}} />;
+  const [fontList, setFontList] = useState([]);
+  let searchIndex = useRef([]);
+  useEffect(() => {
+    fetchFonts().then(fonts => {
+      buildSearchIndex(fonts).then(index => {
+        searchIndex.current = index;
+        setFontList(fonts);
+      });
+    });
+  }, []);
   return (
     <div className={'app '+(lightTheme ? 'light' : 'dark')}>
       <Router>
           <Header/>
           <Switch>
             <Route path="/catalog">
-              <Catalog {...{customText, toolbar, fontSize, gridView}}/>
+              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView}}/>
             </Route>
             <Route path="/Featured">
               <Featured />
