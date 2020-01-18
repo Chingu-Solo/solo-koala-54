@@ -11,7 +11,8 @@ export default async function fetchFonts() {
     }
     // fetch fontlist from api and store
     else {
-        getList().then(fonts => {
+        return getList().then(fonts => {
+            console.info('Fetched fontList from Google Fonts API');
             localStorage.setItem('fontlistlaststored', Date.now().toString());
             localStorage.setItem('fontlist', JSON.stringify(fonts.items));
             return fonts.items;
