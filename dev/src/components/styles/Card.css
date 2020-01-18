@@ -13,6 +13,9 @@
     max-width: 1200px;
     margin-bottom: 24px;
 }
+.card__heading {
+    cursor: pointer;
+}
 .grid .card__heading {
     position: relative;
     display: grid;
@@ -29,6 +32,7 @@
     height: 100%;
 }
 .bar .card__heading {
+    position: relative;
     display: grid;
     place-items: center center;
     width: 100%;
@@ -65,6 +69,17 @@
 }
 .bar .card__text {
     width: 90%;
+}
+.card__collection-button {
+    position: absolute;
+    left: 5px;
+    top: calc(50% - 7px);
+}
+.card__collection-button--add {
+    visibility: hidden;
+}
+.card__heading:hover .card__collection-button--add { 
+    visibility: visible;
 }
 @media only screen and (max-width: 640px) { 
     .grid .card__heading {
