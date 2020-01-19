@@ -23,7 +23,7 @@ export default function Card(props) {
         props.removeCardFromCollection(name);
     }
     const addToCollection = () => {
-        props.addCardToCollection(props);
+        props.addCardToCollection({...props, styles});
     }
     const headerTitle = `${props.isInCollection ? 'Remove ' : 'Add '+name} ${props.isInCollection ? 'from' : 'to'} collection`;
     useEffect(() => {
