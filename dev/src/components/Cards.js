@@ -3,7 +3,7 @@ import Card from '../components/Card';
 import querySearch from '../controllers/querySearch';
 
 export default function Cards(props) {
-    const {fontList, number, filter, searchIndex, customText, collection} = props;
+    const {fontList, number, filter, searchIndex, customText, collection, fontSize} = props;
     const makeCards = () => {
         if (!fontList || fontList.length < 1) {
             return <p>no fonts to load :S</p>
@@ -28,7 +28,7 @@ export default function Cards(props) {
                 let inCollection = collection.list.map(f => f.hasOwnProperty('family') && f.family).includes(font.family);
                 cards.push(<Card 
                     key={font.family+'card'} 
-                    {...{...font, ...collection, customText}} 
+                    {...{...font, ...collection, customText, fontSize}} 
                     isInCollection={inCollection}
                 />);
             }
