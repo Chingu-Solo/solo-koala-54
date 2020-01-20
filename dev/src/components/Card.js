@@ -28,9 +28,11 @@ export default function Card(props) {
     const headerTitle = `${props.isInCollection ? 'Remove' : 'Add'} ${name} ${props.isInCollection ? 'from' : 'to'} collection`;
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
     useEffect(() => {
+        let active = true;
         retrieveFontFileUrl(name, props.files).then(url => {
-            setFontUrl(url);
-          });        
+            active && setFontUrl(url);
+        });        
+          return () => active = false;
         }, [name, props.files]);
     return (
         <div className={'card '+css(styles.font)}> 
