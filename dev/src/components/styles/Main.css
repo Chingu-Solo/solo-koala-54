@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 1200px;
     display: grid;
-    place-items: center center;
+    place-items: start center;
     place-self: start center;
 }
 .catalog.grid {
