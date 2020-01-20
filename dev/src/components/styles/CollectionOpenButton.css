@@ -7,7 +7,7 @@
     padding: 4px 8px 4px 8px;
     text-align: left;
     color: var(--main-colour);
-    transform: translateX(-75%);
+    transform: translateX(calc(-100% + 32px));
     transition: transform 1s;
     background: var(--off-main-bg-colour);
     display: grid;
