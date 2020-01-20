@@ -22,8 +22,8 @@ export default function Nav(props) {
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
-                <img src={searchIcon} title="search" alt="search" />
-                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" />
+                <img src={searchIcon} alt="" />
+                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" />
             </div>
              <div className="toolbar__font-control">
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} type="text" placeholder="Custom Text..." />
