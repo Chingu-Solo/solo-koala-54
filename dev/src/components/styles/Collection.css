@@ -1,0 +1,113 @@
+.collection {
+    width: 80%;
+    max-width: 1200px;
+    border: solid 1px var(--main-colour);
+    border-radius: 12px;
+    background: var(--off-main-bg-colour);
+    padding: 5vw;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+    "list embed"
+    "list import"
+    "list css";
+    position: relative;
+    color: var(--main-colour);
+}
+textarea {
+    width: 100%;
+}
+.collection__close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+}
+.collection__title {
+    font-size: 32px;
+}
+.collection__list {
+    width: 200px;
+    grid-area: list;
+    place-self: start center;
+}
+.collection__code {
+    color: var(--main-colour);
+}
+.dark .collection__code {
+    background: var(--dark-bg-colour);
+}
+.collection__embed {
+    grid-area: embed;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+.collection__embed .collection__code {
+    min-height: 50px;
+}
+.collection__import {
+    grid-area: import;
+}
+
+.collection__import, .collection__embed, .collection__css__font-family {
+    display: grid;
+    grid-template-columns: 40px auto;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "subtitle subtitle"
+    "copy code";
+    place-items: center start;
+}
+.collection__css {
+    grid-area: css;
+}
+.collection__css__font-family {
+    margin-bottom: 12px;
+}
+.collection__css__font-family .collection__copy-button {
+    height: 24px;
+}
+.collection__list .card {
+    width: 100%;
+}
+.collection .card__text {
+    display: none;
+}
+.collection__subtitle {
+    grid-area: subtitle;
+}
+.collection__copy-button {
+    grid-area: copy;
+}
+.collection__code {
+    grid-area: code;
+}
+.collection .card__heading {
+    position: relative;
+    width: 100%;
+    font-size: 24px;
+    text-align: left;
+    padding-left: 24px;
+}
+.collection .card__heading::before {
+    position: absolute;
+    content: '';
+    background: none;
+}
+.collection .card__heading__title {
+    margin-top: 24px;
+    background: var(--off-main-bg-colour);
+}
+@media only screen and (max-width: 640px) { 
+    .collection {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "list"
+        "embed"
+        "import"
+        "css";
+        gap: 0 5vw;
+    }
+}

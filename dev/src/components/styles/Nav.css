@@ -1,12 +1,11 @@
 .toolbar {
     width: 90%;
     max-width: 1200px;
-    margin-left: 5%;
     margin-top: 24px;
     display: grid;
     grid-template-columns: 2fr 2fr 1fr 1fr;
     grid-template-rows: auto;
-    grid-gap: 5vw;
+    grid-column-gap: 5vw;
     place-items: center center;
     grid-template-areas: 
       ". font . ."
@@ -28,6 +27,7 @@
     font-size: 24px;
     max-width: 200px;
     background: var(--main-bg-colour);
+    color: var(--main-colour);
 }
 .dark .toolbar__search__input { 
   background: var(--dark-bg-colour);
@@ -56,6 +56,7 @@
     border: none;
     font-size: 24px;
     background: var(--main-bg-colour);
+    color: var(--main-colour);
 }
 .dark .toolbar__custom-text { 
   background: var(--dark-bg-colour);
