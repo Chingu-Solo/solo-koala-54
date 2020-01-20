@@ -15,5 +15,7 @@ code {
 :root {
   --main-colour: #707070;
   --main-bg-colour: #ffffff;
+  --off-main-bg-colour: #dddddd;
   --dark-bg-colour: #000000;
+  --off-dark-bg-colour: #222222;
 }

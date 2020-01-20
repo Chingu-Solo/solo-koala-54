@@ -1,19 +1,24 @@
 import React from 'react';
 import wiggerlyLine from '../images/wiggerlyline.svg';
 import { css } from 'aphrodite/no-important';
+import './styles/CollectionOpenButton.css';
 
 export default function CollectionOpenButton(props) {
     const blankLines = () => {
-        for (let l=0;l<6-props.inCollection.length;l++) {
-            return <li><img src={wiggerlyLine} alt="" /></li>
+        const arr = [];
+        for (let l=props.list.length;l<3;l++) {
+            arr.push(<div key={'listBlank'+l}>{l+1}. <img src={wiggerlyLine} alt="" /></div>)
         }
+        return arr
     }
-    const fontsInCollection = () => props.inCollection.map(font => <li className={css(props.styles.font)}>{font.family}</li>);
+    const fontsInCollection = () => props.list.map((font, i, arr) => (arr.length-i <= 3) ? <div key={font.family+'collectionList'} className={css(font.styles.font)}>{i+1}. {font.family}</div> : false).filter(font => font);
     return (
-        <button onClick={props.showCollection}>
-            <ol>
+        <button className="collection-open-button" onClick={props.showCollection}>
+            <h4>Collection</h4>
+            <ol start={props.list.length >= 3 ? props.list.length-2 : 1}>
                 {fontsInCollection()}
                 {blankLines()}
+                ...
             </ol>
         </button>
     )

@@ -20,12 +20,13 @@ export default function Card(props) {
         }
     });
     const removeFromCollection = () => {
-        props.removeCardFromCollection(name);
+        props.removeFromCollection(name);
     }
     const addToCollection = () => {
-        props.addCardToCollection({...props, styles});
+        props.addToCollection({...props, styles});
     }
-    const headerTitle = `${props.isInCollection ? 'Remove ' : 'Add '+name} ${props.isInCollection ? 'from' : 'to'} collection`;
+    const headerTitle = `${props.isInCollection ? 'Remove' : 'Add'} ${name} ${props.isInCollection ? 'from' : 'to'} collection`;
+    const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
     useEffect(() => {
         retrieveFontFileUrl(name, props.files).then(url => {
             setFontUrl(url);
@@ -33,7 +34,7 @@ export default function Card(props) {
         }, [name, props.files]);
     return (
         <div className={'card '+css(styles.font)}> 
-                <header className="card__heading" title={headerTitle} onClick={props.isInCollection ? removeFromCollection : addToCollection}>
+                <header className="card__heading" title={headerTitle} onClick={addRemoveOnclick}>
                 {props.isInCollection ? 
                     <img className="card__collection-button card__collection-button--remove" src={removeIcon} alt="" /> : 
                     <img className="card__collection-button card__collection-button--add" src={addIcon} alt="" />}

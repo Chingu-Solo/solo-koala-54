@@ -1,0 +1,11 @@
+.collection-open-button {
+    position: fixed;
+    left: 0;
+    bottom: 144px;
+    z-index: 200;
+    opacity: 0.8;
+    text-align: left;
+}
+.collection-open-button ol {
+    padding-inline-start: 10px;
+}
