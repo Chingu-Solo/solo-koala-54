@@ -20,16 +20,19 @@ export default function Cards(props) {
         for (let i=0;i<nCards;i++) {
             let index = currentIndex === 'linear' ? i : currentIndex[i];
             let font = fontList[index];
-            let inCollection = collection.list.map(f => f.family).includes(font.family);
             if (!Number.isInteger(index) || index > fontList.length - 1) {
                 cards.push(<p key={'end-of-results-message'}>End of results</p>);
                 break;
             }
-            cards.push(<Card 
-                key={font.family+'card'} 
-                {...{...font, ...collection, customText}} 
-                isInCollection={inCollection}
-            />);
+            else {
+                let inCollection = collection.list.map(f => f.hasOwnProperty('family') && f.family).includes(font.family);
+                cards.push(<Card 
+                    key={font.family+'card'} 
+                    {...{...font, ...collection, customText}} 
+                    isInCollection={inCollection}
+                />);
+            }
+            
         }  
         return cards
     }

@@ -1,11 +1,35 @@
 .collection-open-button {
     position: fixed;
     left: 0;
-    bottom: 144px;
+    bottom: 25%;
     z-index: 200;
     opacity: 0.8;
+    padding: 4px 8px 4px 8px;
     text-align: left;
+    color: var(--main-colour);
+    transform: translateX(calc(-100% + 32px));
+    transition: transform 1s;
+    background: var(--off-main-bg-colour);
+    display: grid;
+    grid-template-columns: auto 24px;
+    grid-template-areas: 'list title';
+    place-items: center end;
+    border-radius: 8px;
 }
-.collection-open-button ol {
+.collection-open-button__title {
+    margin: 0 0 0 24px;
+    transform: rotate(-90deg) translateY(48px);
+    grid-area: title;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.dark .collection-open-button { 
+    background: var(--off-dark-bg-colour);
+}
+.collection-open-button__list {
+    grid-area: list;
     padding-inline-start: 10px;
+}
+.collection-open-button.show, .collection-open-button:hover {
+    transform: translateX(-10%);
 }

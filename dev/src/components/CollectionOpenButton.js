@@ -13,13 +13,13 @@ export default function CollectionOpenButton(props) {
     }
     const fontsInCollection = () => props.list.map((font, i, arr) => (arr.length-i <= 3) ? <div key={font.family+'collectionList'} className={css(font.styles.font)}>{i+1}. {font.family}</div> : false).filter(font => font);
     return (
-        <button className="collection-open-button" onClick={props.showCollection}>
-            <h4>Collection</h4>
-            <ol start={props.list.length >= 3 ? props.list.length-2 : 1}>
+        <div className="collection-open-button" onClick={props.showCollection}>
+            <h4 className="collection-open-button__title">Collection</h4>
+            <ol className="collection-open-button__list" start={props.list.length >= 3 ? props.list.length-2 : 1}>
                 {fontsInCollection()}
                 {blankLines()}
                 ...
             </ol>
-        </button>
+        </div>
     )
 }

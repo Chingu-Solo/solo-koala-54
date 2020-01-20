@@ -7,6 +7,7 @@
     display: grid;
     place-items: center center;
     place-self: end center;
+    z-index: 300;
 }
 .github-link {
     width: 192px;

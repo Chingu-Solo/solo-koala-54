@@ -5,6 +5,11 @@
     overflow: hidden;
     place-self: start center;
     height: 120px;
+    z-index: 300;
+    background: var(--main-bg-colour);
+}
+.dark .pageHeader {
+    background: var(--dark-bg-colour);
 }
 .pageHeader__logo {
     place-self: center center;

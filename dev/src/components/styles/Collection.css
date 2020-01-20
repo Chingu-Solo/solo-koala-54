@@ -15,8 +15,9 @@
     position: relative;
     color: var(--main-colour);
 }
-textarea {
+.collection textarea {
     width: 100%;
+    resize: none;
 }
 .collection__close {
     position: absolute;

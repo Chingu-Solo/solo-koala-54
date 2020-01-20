@@ -1,9 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Coda|Galindo&display=swap');
 .app {
   display: grid;
   place-items: center center;
   grid-template-rows: 120px 200px auto;
   min-height: 100vh;
   background: var(--main-bg-colour);
+  font-family: 'Galindo', display;
+  color: var(--main-colour);
+}
+input {
+  font-family: 'Galindo', display;
+}
+textarea {
+  font-family: 'Coda', display;
 }
 .app.dark {
   background: var(--dark-bg-colour);

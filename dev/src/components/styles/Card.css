@@ -21,7 +21,6 @@
     display: grid;
     place-items: start center;
     width: 100%;
-    font-size: 24px;
 }
 .grid .card__heading::before {
     position: absolute;
@@ -36,7 +35,6 @@
     display: grid;
     place-items: center center;
     width: 100%;
-    font-size: 24px;
 }
 .bar .card__heading::before {
     position: absolute;
@@ -46,7 +44,6 @@
     width: 80vw;
     max-width: 1200px;
     height: 18px;
-    font-size: 24px;
 }
 .card__heading__title {
     background: var(--main-bg-colour);
@@ -68,7 +65,7 @@
     word-break: break-all;
 }
 .bar .card__text {
-    width: 90%;
+    width: 85%;
 }
 .card__collection-button {
     position: absolute;
