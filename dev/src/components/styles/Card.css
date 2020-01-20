@@ -15,6 +15,7 @@
 }
 .card__heading {
     cursor: pointer;
+    font-size: 22px;
 }
 .grid .card__heading {
     position: relative;
@@ -80,9 +81,9 @@
 }
 @media only screen and (max-width: 640px) { 
     .grid .card__heading {
-        font-size: 4vw;
+        font-size: 3.5vw;
     }
     .grid .card__heading__title {
-        margin-top: 4vw;
+        margin-top: 3.5vw;
     }
 }
