@@ -4,6 +4,8 @@ import './styles/Main.css';
 import { useParams } from "react-router-dom";
 import CollectionOpenButton from './CollectionOpenButton';
 import Collection from './Collection';
+import OnPageBottom from '../controllers/OnPageBottom';
+import querySearch from '../controllers/querySearch';
 
 export default function Main(props) {
     let { filter } = useParams('/:filter');
@@ -11,7 +13,29 @@ export default function Main(props) {
     const [showCollection, setShowCollection] = useState(false);
     const [showCollectionButton, setShowCollectionButton] = useState(false);
     const refCloseCollectionIfNavChange = useRef(filter+gridView+customText);
-    
+    const totalCardsLoaded = useRef(20);
+    const [nCards, setNCards] = useState(totalCardsLoaded.current);
+    const loadMoreCards = () => {
+        totalCardsLoaded.current += 20;
+        setNCards(totalCardsLoaded.current);
+    } 
+    let currentIndex;
+    if (filter) {
+        currentIndex = querySearch(filter, searchIndex.current);
+    }
+    else {
+        currentIndex = false;
+    }
+    const isMoreCardsToLoad = () =>  totalCardsLoaded.current < (currentIndex ? currentIndex.length : fontList.length);
+    const canResetPageBottom = useRef(false);
+    const handleResolveOnPageBottom = resolve => {
+        const shouldKeepChecking = isMoreCardsToLoad();
+        if (canResetPageBottom.current && shouldKeepChecking) {
+            canResetPageBottom.current = false;
+        }
+        resolve(shouldKeepChecking);
+    }
+
     useEffect(() => {
         if (!showCollection && collection.list.length > 0) {
             setShowCollectionButton(true);
@@ -25,10 +49,15 @@ export default function Main(props) {
         }
 
     }, [collection.list.length, showCollection, filter, gridView, customText]);
+    useEffect(() => {
+        canResetPageBottom.current = true;
+    });
+
     return (
         <main className={`catalog ${showCollection ? 'collection-open' : gridView ? 'grid' : 'bar'}`}>
             {showCollectionButton && <CollectionOpenButton list={collection.list} showCollection={() => setShowCollection(true)}/>}
-            {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : <Cards {...{fontList, searchIndex, customText, filter, collection, fontSize}} />}
+            {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : <Cards {...{fontList, searchIndex, customText, filter, currentIndex, collection, fontSize, number: nCards}} />}
+            {fontList.length > 0 && <OnPageBottom exec={loadMoreCards} callback={handleResolveOnPageBottom} />}
         </main>
     );
 }
