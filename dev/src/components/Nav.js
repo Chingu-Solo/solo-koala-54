@@ -12,8 +12,9 @@ import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
 
 export default function Nav(props) {
-    const [query, setQuery] = useState('');
     let match = useRouteMatch();
+    let filter = useRouteMatch('/:page/:filter');
+    const [query, setQuery] = useState(filter ? filter.params.filter : '');
     let [withRedirect, setWithRedirect] = useState(false);
     const search = event => {
         setWithRedirect(true);
@@ -23,7 +24,7 @@ export default function Nav(props) {
         <nav className="toolbar">
             <div className="toolbar__search">
                 <img src={searchIcon} alt="" />
-                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" />
+                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" value={query} />
             </div>
              <div className="toolbar__font-control">
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} type="text" placeholder="Custom Text..." />
