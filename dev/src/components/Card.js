@@ -18,6 +18,9 @@ export default function Card(props) {
         font: {
             fontFamily: [googleFont],
             fontSize: props.fontSize+'px'
+        },
+        fontHeading: {
+            fontFamily: [googleFont]
         }
     });
     const removeFromCollection = () => {
@@ -41,7 +44,7 @@ export default function Card(props) {
                 {props.isInCollection ? 
                     <img className="card__collection-button card__collection-button--remove" src={removeIcon} alt="" /> : 
                     <img className="card__collection-button card__collection-button--add" src={addIcon} alt="" />}
-                    <span className="card__heading__title">{name}</span>
+                    <span className={'card__heading__title '+css(styles().fontHeading)}>{name}</span>
                 </header>
                 {!fontUrl ? <p>Sorry: {props.family} file is not avalible</p> : <p className={'card__text '+css(styles().font)}>{props.customText}</p>}
             </div>
