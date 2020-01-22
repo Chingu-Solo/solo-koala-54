@@ -4,6 +4,7 @@ import './styles/Card.css';
 import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
+import loading from '../images/loading.gif';
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
@@ -46,7 +47,8 @@ export default function Card(props) {
                     <img className="card__collection-button card__collection-button--add" src={addIcon} alt="" />}
                     <span className={'card__heading__title '+css(styles().fontHeading)}>{name}</span>
                 </header>
-                {!fontUrl ? <p>Sorry: {props.family} file is not avalible</p> : <p className={'card__text '+css(styles().font)}>{props.customText}</p>}
+                {!fontUrl ? <img src={loading} alt="loading..." /> : <p className={'card__text '+css(styles().font)}>{
+                props.customText !== '' ? props.customText : props.phrase}</p>}
             </div>
     )
 } 
