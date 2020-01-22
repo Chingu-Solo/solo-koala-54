@@ -27,9 +27,9 @@ export default function App() {
   const [fontSize, setFontSize] = useState(18);
   const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);
-  const toolbar = <Nav {...{setCustomText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme}} />;
-  const [fontList, setFontList] = useState([]);
   const [collectionList, setCollectionList] = useState([]);
+  const toolbar = <Nav {...{setCustomText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
+  const [fontList, setFontList] = useState([]);
   const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
   const collection = {
     addToCollection: font => setCollectionList([...collectionList, font]),
