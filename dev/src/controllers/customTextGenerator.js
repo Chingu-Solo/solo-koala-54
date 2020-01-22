@@ -10,7 +10,7 @@ export default function* customTextGenerator(approxLength = 150) {
         let haystack = data[useDataFromIndex][useDataFromSubIndex][0];
         let sentances = haystack.split('.');
         if (sentances.length > 0) {
-            sentances.splice(0, lookForNthSegment);
+            sentances.splice(0, lookForNthSegment%(sentances.length-1)); // remove from array sentances upto lookForNthSegment
             for (let sentance of sentances) {
                 if (letterCount <= approxLength) {
                     letterCount += sentance.length;

@@ -10,7 +10,6 @@ import loading from '../images/loading.gif';
 const getPhrase = customTextGenerator(80);
 
 export default function Card(props) {
-    const [defaultText, setDefaultText] = useState('')
     const [fontUrl, setFontUrl] = useState(false);
     const name = props.family;
     const googleFont = !fontUrl ? { fontFamily: 'inherit' } : {
@@ -40,16 +39,6 @@ export default function Card(props) {
         let active = true;
         retrieveFontFileUrl(name, props.files).then(url => {
             active && setFontUrl(url);
-            let phrase = getPhrase.next().value;
-            let count = 0;
-            while (phrase.length < 70) {
-                phrase = getPhrase.next().value;
-                if (count++ > 10) {
-                    phrase = 'default text';
-                    break;
-                }
-            }
-            setDefaultText(phrase);
         });        
           return () => active = false;
         }, [name, props.files]);
@@ -62,7 +51,7 @@ export default function Card(props) {
                     <span className={'card__heading__title '+css(styles().fontHeading)}>{name}</span>
                 </header>
                 {!fontUrl ? <img src={loading} alt="loading..." /> : <p className={'card__text '+css(styles().font)}>{
-                props.customText !== '' ? props.customText : defaultText}</p>}
+                props.customText !== '' ? props.customText : props.phrase}</p>}
             </div>
     )
 } 

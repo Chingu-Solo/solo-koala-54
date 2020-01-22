@@ -10,6 +10,7 @@ import {
 /* controllers */
 import fetchFonts from './controllers/fetchFonts';
 import buildSearchIndex from './controllers/buildSearchIndex';
+import assignPhraseToEachFont from './controllers/assignPhraseToEachFont';
 
 /* components */
 import Header from './components/Header';
@@ -50,9 +51,11 @@ export default function App() {
       const storedCollection = localStorage.getItem('collection');
       fetchFonts().then(fonts => {
         buildSearchIndex(fonts).then(index => {
-          searchIndex.current = index;
-          setFontList(fonts);
-          storedCollection && setCollectionList(JSON.parse(storedCollection));
+          assignPhraseToEachFont(fonts).then(fonts => {
+            searchIndex.current = index;
+            setFontList(fonts);
+            storedCollection && setCollectionList(JSON.parse(storedCollection));
+          });
         });
       });
   }, []);
