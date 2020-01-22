@@ -26,6 +26,7 @@ export default function Nav(props) {
         props.setGridView(true);
         props.setLightTheme(true);
         setQuery('');
+        props.setCollectionList([]);
         window.scrollTo(0, 0);
         setWithRedirect(true);
     };
