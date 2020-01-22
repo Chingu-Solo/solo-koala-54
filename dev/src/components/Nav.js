@@ -24,7 +24,7 @@ export default function Nav(props) {
         <nav className="toolbar">
             <div className="toolbar__search">
                 <img src={searchIcon} alt="" />
-                <input className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" value={query} />
+                <input role="search" className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" value={query} />
             </div>
              <div className="toolbar__font-control">
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} type="text" placeholder="Custom Text..." />
@@ -34,10 +34,10 @@ export default function Nav(props) {
                 </div>
             </div>
             <div className="toolbar__display-control">
-                <img onClick={() => props.setGridView(!props.gridView)} className="toolbar__layout-toggle clickable" src={props.gridView ? barViewIcon : gridViewIcon} title={props.gridView ? 'Bar view' : 'Grid view'} alt="Toggle bar/grid layout" />
-                <img onClick={() => props.setLightTheme(!props.lightTheme)} className="toolbar__theme-toggle clickable" src={props.lightTheme ? darkThemeIcon : lightThemeIcon} title={props.lightTheme ? 'Dark theme' : 'Light theme'} alt="Toggle dark/light theme" />
+                <button className="icon-button toolbar__layout-toggle" onClick={() => props.setGridView(!props.gridView)} title={props.gridView ? 'Bar view' : 'Grid view'}><img src={props.gridView ? barViewIcon : gridViewIcon} alt="" /></button>
+                <button className="icon-button toolbar__theme-toggle" onClick={() => props.setLightTheme(!props.lightTheme)} title={props.lightTheme ? 'Dark theme' : 'Light theme'}><img src={props.lightTheme ? darkThemeIcon : lightThemeIcon} alt="" /></button>
             </div>
-            <img className="toolbar__reset clickable" src={resetIcon} title="reset" alt="reset" />
+            <button className="icon-button toolbar__reset" title="reset"><img className="toolbar__reset" src={resetIcon} alt="" /></button>
             {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
         </nav>
     )

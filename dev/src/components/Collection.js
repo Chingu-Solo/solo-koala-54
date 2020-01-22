@@ -19,26 +19,34 @@ export default function Collection(props) {
         cssFontsRefs[font.family] = {};
         return (
             <div className="collection__css__font-family" key={font.family+'css'}>
-                <img onClick={() => copyToClipboard(cssFontsRefs[font.family])} className="collection__copy-button" src={copyIcon} alt="copy to clipboard" title="copy to clipboard" />
+                <button className="icon-button collection__copy-button" onClick={() => copyToClipboard(cssFontsRefs[font.family]) } title="copy to clipboard">
+                    <img src={copyIcon} title="copy to clipboard" alt="" />
+                </button>
                 <textarea className="collection__code" readOnly ref={el => cssFontsRefs[font.family] = {current: el}} value={`font-family: '${font.family}', ${font.category};`} />
             </div>
         )
     });
     return (
         <div className="collection">
-            <img onClick={props.closeCollection} className="collection__close" src={exitIcon} alt="Close modal" title="Close modal" />
+            <button className="icon-button collection__close" onClick={props.closeCollection} title="Close modal">
+                <img src={exitIcon} alt="" />
+            </button>
             <div className="collection__list">
             <h2 className="collection__title">Collection</h2>
                 {cards}
             </div>
             <div className="collection__embed">
                 <h3 className="collection__subtitle">Embed</h3>
-                <img onClick={() => copyToClipboard(embedInHeadTextArea)} className="collection__copy-button" src={copyIcon} alt="copy to clipboard" title="copy to clipboard" />
+                <button className="icon-button collection__copy-button" onClick={() => copyToClipboard(embedInHeadTextArea)} title="copy to clipboard">
+                    <img src={copyIcon} alt="" />
+                </button>
                 <textarea className="collection__code" readOnly ref={embedInHeadTextArea} value={`<link href="${uri}" rel="stylesheet">`} />
             </div>
             <div className="collection__import">
                 <h3 className="collection__subtitle">Import</h3>
-                <img onClick={() => copyToClipboard(importTextArea)} className="collection__copy-button" src={copyIcon} alt="copy to clipboard" title="copy to clipboard" />
+                <button className="icon-button collection__copy-button" onClick={() => copyToClipboard(importTextArea)} title="copy to clipboard">
+                    <img src={copyIcon} alt="" />
+                </button>
                 <textarea className="collection__code" readOnly ref={importTextArea} value={`@import url('${uri}');`} />
             </div>
             <div className="collection__css">

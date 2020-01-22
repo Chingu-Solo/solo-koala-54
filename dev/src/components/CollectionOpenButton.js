@@ -11,7 +11,7 @@ export default function CollectionOpenButton(props) {
         }
         return arr
     }
-    const fontsInCollection = () => props.list.map((font, i, arr) => (arr.length-i <= 3) ? <div key={font.family+'collectionList'} className={css(font.styles.font)}>{i+1}. {font.family}</div> : false).filter(font => font);
+    const fontsInCollection = () => props.list.map((font, i, arr) => (arr.length-i <= 3) ? <div key={font.family+'collectionList'} className={font.hasOwnProperty('styles') ? css(font.styles.fontHeading) : ''}>{i+1}. {font.family}</div> : false).filter(font => font);
     return (
         <div className="collection-open-button" onClick={props.showCollection}>
             <h4 className="collection-open-button__title">Collection</h4>
