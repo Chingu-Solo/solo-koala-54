@@ -4,10 +4,7 @@ import './styles/Card.css';
 import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
-import customTextGenerator from '../controllers/customTextGenerator';
 import loading from '../images/loading.gif';
-
-const getPhrase = customTextGenerator(80);
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
