@@ -23,7 +23,7 @@ import Articles from './pages/Articles';
 import About from './pages/About';
 
 export default function App() {
-  const [customText, setCustomText] = useState('default text');
+  const [customText, setCustomText] = useState('');
   const [fontSize, setFontSize] = useState(18);
   const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);

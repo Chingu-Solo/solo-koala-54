@@ -4,8 +4,12 @@ import './styles/Card.css';
 import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
+import customTextGenerator from '../controllers/customTextGenerator';
+
+const getPhrase = customTextGenerator(80);
 
 export default function Card(props) {
+    const [defaultText, setDefaultText] = useState('')
     const [fontUrl, setFontUrl] = useState(false);
     const name = props.family;
     const googleFont = !fontUrl ? { fontFamily: 'inherit' } : {
@@ -35,6 +39,7 @@ export default function Card(props) {
         let active = true;
         retrieveFontFileUrl(name, props.files).then(url => {
             active && setFontUrl(url);
+            setDefaultText(getPhrase.next().value);
         });        
           return () => active = false;
         }, [name, props.files]);
@@ -46,7 +51,8 @@ export default function Card(props) {
                     <img className="card__collection-button card__collection-button--add" src={addIcon} alt="" />}
                     <span className={'card__heading__title '+css(styles().fontHeading)}>{name}</span>
                 </header>
-                {!fontUrl ? <p>Sorry: {props.family} file is not avalible</p> : <p className={'card__text '+css(styles().font)}>{props.customText}</p>}
+                {!fontUrl ? <p>Sorry: {props.family} file is not avalible</p> : <p className={'card__text '+css(styles().font)}>{
+                props.customText !== '' ? props.customText : defaultText}</p>}
             </div>
     )
 } 
