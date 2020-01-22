@@ -58,6 +58,10 @@ export default function App() {
           });
         });
       });
+      return () => {
+        setFontList(null);
+        setCollectionList(null);
+      }
   }, []);
   useEffect(() => {
     localStorage.setItem('collection', JSON.stringify(collectionList));

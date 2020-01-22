@@ -48,7 +48,13 @@ export default function Main(props) {
             refCloseCollectionIfNavChange.current = filter+gridView+customText;
             setShowCollection(false);
         }
-
+        return () => {
+            setShowCollectionButton(null);
+            if (refCloseCollectionIfNavChange.current !== filter+gridView+customText || (showCollection && collection.list.length <= 0)) {
+                refCloseCollectionIfNavChange.current = filter+gridView+customText;
+                setShowCollection(null);
+            }
+        }
     }, [collection.list.length, showCollection, filter, gridView, customText]);
     useEffect(() => {
         canResetPageBottom.current = true;
