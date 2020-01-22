@@ -29,7 +29,7 @@ export default function App() {
   const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);
   const [collectionList, setCollectionList] = useState([]);
-  const toolbar = <Nav {...{setCustomText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
+  const toolbar = <Nav {...{setCustomText, customText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
   const [fontList, setFontList] = useState([]);
   const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
   const collection = {
