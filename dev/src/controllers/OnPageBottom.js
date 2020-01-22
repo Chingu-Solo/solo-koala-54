@@ -1,16 +1,16 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useEffect } from 'react';
 import throttle from '../utils/throttle';
 
 export default function OnPageBottom(props) {
     const controlPassedToFunction = useRef(false); // as a latch
-    const checkPos = () => {
+    let exec = props.exec || (() => console.info('No function given for OnPageBottom'));
+    const execScope = props.scope || null;
+    const callback = props.callback || false; 
+    const timeout = props.timeout || 500; // if passed in function won't callback use a timeout to reset latch
+    let checkPos = () => {
         const pageHeight = document.body.scrollHeight;
         const scrollPosFromPageBottom = window.pageYOffset + window.innerHeight;
         const offset = window.innerHeight * ((props.offsetPercent || 25)/100);
-        const exec = props.exec || (() => console.info('No function given for OnPageBottom'));
-        const execScope = props.scope || null;
-        const callback = props.callback || false; 
-        const timeout = props.timeout || 500; // if passed in function won't callback use a timeout to reset latch
         if (!controlPassedToFunction.current && pageHeight - (scrollPosFromPageBottom + offset) <= 0) {
             controlPassedToFunction.current = true;
             new Promise((resolve, reject) => {
@@ -28,12 +28,16 @@ export default function OnPageBottom(props) {
         }
     }
     const listingForScroll = useRef(false); // as a latch
+    useEffect(() => {
+        return () => controlPassedToFunction.current = true; // prevents exec being called after dismount
+    }, []);
     useLayoutEffect(() => {
         if (document && !listingForScroll.current) {
             listingForScroll.current = true;
             document.addEventListener('scroll', throttle(checkPos, 250));
             checkPos(); // check intial loaded page
         }
+        return () => document.removeEventListener('scroll', throttle(checkPos, 250));
     })
     return <></>
 }
