@@ -53,7 +53,6 @@ export default function Main(props) {
     useEffect(() => {
         canResetPageBottom.current = true;
     });
-    console.log(collection)
     return (
         <main className={`catalog ${showCollection ? 'collection-open' : gridView ? 'grid' : 'bar'}`}>
             {showCollectionButton && <CollectionOpenButton list={collection.list} showCollection={() => setShowCollection(true)}/>}
