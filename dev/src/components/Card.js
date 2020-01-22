@@ -40,7 +40,16 @@ export default function Card(props) {
         let active = true;
         retrieveFontFileUrl(name, props.files).then(url => {
             active && setFontUrl(url);
-            setDefaultText(getPhrase.next().value);
+            let phrase = getPhrase.next().value;
+            let count = 0;
+            while (phrase.length < 70) {
+                phrase = getPhrase.next().value;
+                if (count++ > 10) {
+                    phrase = 'default text';
+                    break;
+                }
+            }
+            setDefaultText(phrase);
         });        
           return () => active = false;
         }, [name, props.files]);
