@@ -19,7 +19,16 @@ export default function Nav(props) {
     const search = event => {
         setWithRedirect(true);
         setQuery(event.target.value);
-    }
+    };
+    const handleReset = () => {
+        props.setCustomText('');
+        props.setFontSize(18);
+        props.setGridView(true);
+        props.setLightTheme(true);
+        setQuery('');
+        window.scrollTo(0, 0);
+        setWithRedirect(true);
+    };
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
@@ -37,7 +46,7 @@ export default function Nav(props) {
                 <button className="icon-button toolbar__layout-toggle" onClick={() => props.setGridView(!props.gridView)} title={props.gridView ? 'Bar view' : 'Grid view'}><img src={props.gridView ? barViewIcon : gridViewIcon} alt="" /></button>
                 <button className="icon-button toolbar__theme-toggle" onClick={() => props.setLightTheme(!props.lightTheme)} title={props.lightTheme ? 'Dark theme' : 'Light theme'}><img src={props.lightTheme ? darkThemeIcon : lightThemeIcon} alt="" /></button>
             </div>
-            <button className="icon-button toolbar__reset" title="reset"><img className="toolbar__reset" src={resetIcon} alt="" /></button>
+            <button className="icon-button toolbar__reset" onClick={handleReset} title="reset"><img className="toolbar__reset" src={resetIcon} alt="" /></button>
             {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
         </nav>
     )
