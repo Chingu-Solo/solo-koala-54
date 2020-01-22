@@ -27,7 +27,7 @@ export default function Card(props) {
         props.removeFromCollection(name);
     }
     const addToCollection = () => {
-        props.addToCollection({...props, styles});
+        props.addToCollection({...props, styles: styles()});
     }
     const headerTitle = `${props.isInCollection ? 'Remove' : 'Add'} ${name} ${props.isInCollection ? 'from' : 'to'} collection`;
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
@@ -40,7 +40,7 @@ export default function Card(props) {
         }, [name, props.files]);
     return (
         <div className={'card '+css(styles.font)}> 
-                <header className="card__heading" title={headerTitle} onClick={addRemoveOnclick}>
+                <header role="button" aria-pressed="false" className="card__heading" title={headerTitle+(props.isInCollection? ' - in collection' : '')} onClick={addRemoveOnclick}>
                 {props.isInCollection ? 
                     <img className="card__collection-button card__collection-button--remove" src={removeIcon} alt="" /> : 
                     <img className="card__collection-button card__collection-button--add" src={addIcon} alt="" />}
