@@ -6,6 +6,7 @@ import CollectionOpenButton from './CollectionOpenButton';
 import Collection from './Collection';
 import OnPageBottom from '../controllers/OnPageBottom';
 import querySearch from '../controllers/querySearch';
+import BackToTop from './BackToTop';
 
 export default function Main(props) {
     let { filter } = useParams('/:filter');
@@ -56,6 +57,7 @@ export default function Main(props) {
     return (
         <main className={`catalog ${showCollection ? 'collection-open' : gridView ? 'grid' : 'bar'}`}>
             {showCollectionButton && <CollectionOpenButton list={collection.list} showCollection={() => setShowCollection(true)}/>}
+            <BackToTop/>
             {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : <Cards {...{fontList, searchIndex, customText, filter, currentIndex, collection, fontSize, number: nCards}} />}
             {fontList.length > 0 && <OnPageBottom exec={loadMoreCards} callback={handleResolveOnPageBottom} />}
         </main>
