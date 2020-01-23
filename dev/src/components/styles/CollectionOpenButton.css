@@ -4,7 +4,7 @@
     bottom: 25%;
     z-index: 200;
     opacity: 0.8;
-    padding: 4px 8px 4px 8px;
+    padding: 14px 8px 14px 18px;
     text-align: left;
     color: var(--main-colour);
     transform: translateX(calc(-100% + 32px));
@@ -17,8 +17,7 @@
     border-radius: 8px;
 }
 .collection-open-button__title {
-    margin: 0 0 0 24px;
-    transform: rotate(-90deg) translateY(48px);
+    transform: rotate(-90deg) translateY(58px);
     grid-area: title;
     font-size: 18px;
     letter-spacing: 3px;
