@@ -54,6 +54,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
+- [x] fix Using target="_blank" without rel="noopener noreferrer"
 - [] fade in BackToTop
 - [] make OnPageBottom kick in earlier
 - [] use retrieveFontFileUrl for fonts in CollectionOpenButton instead of storing the url
