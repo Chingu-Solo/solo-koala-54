@@ -1,0 +1,19 @@
+.featured {
+    width: 80%;
+    max-width: 1200px;
+    display: grid;
+    place-items: start center;
+    place-self: start center;
+}
+
+
+
+.featured__roboto {
+
+}
+.featured__noto-fonts {
+
+}
+.featured__open-sans {
+
+}
