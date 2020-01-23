@@ -10,37 +10,48 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
 - [aphrodite](https://github.com/Khan/aphrodite)
 - [Google Fonts API](https://developers.google.com/fonts/)
+- [axios](https://www.npmjs.com/package/axios)
 ### Specification
-TODO write list of what what the SPA can do 
+ - header
+    - logo
+    - site menu/page linka
+ - catalog
+    - toolbar
+        - search Google Fonts
+        - customise sample text
+        - alter font size
+        - toggle grid/bar view
+        - toggle light/dark theme
+        - reset all controls
+    - cards
+        - grid type
+        - bar type
+        - add to collection button
+        - remove from collection button
+
+    
 ### Structure
-TODO make flow diagram here
+#### Data flow
+![Data flow Diagram](./assets/dataflow.png);
 
 
 ---- 
 ## TODO
-- [x] make components
-    - [x] header ([x] structure/styling)
-    - [x] nav
-        - [x] search
-            - ~~make data field so suggests as you type~~ (scraped)
-                - ~~pin myCollection to top~~ (scraped)
-        - [x] custom text
-        - [x] font size
-        - [x] light/dark mode
-        - [x] grid/list mode
-        - [x] reset
-    - [x] main section
-    - [x] font cards
-        - [x] box type
-        - [x] list/bar type
-        - [x] make add to myCollection button
-    - [x] back to top button
-    -  [x] footer
-- [x] make controllers
-    - [x] router
-    - [x] ~~fetchPopularGoogleFonts~~ fetchFonts and retrieveFontFileUrl
-    - [x] ~~queryFonts~~ querySearch
-    - [x] ~~myCollection:~~ Collection: stores list of user added fonts
-    - [x] ~~bottomOfCatalogReached:~~ OnPageBottom loads more fonts when client is in range of page bottom
-- [x] get google font api key
+- [] rename Nav component to Toolbar
+- [] add some padding around collectionOpenButton
+- [] add margin between cards and toolbar on bar view
+- [] make search input not overlap display controls on small screen size 
+- [] make decorative 'tiles' using fonts in featured page for featured page and apply grid styling
+- [] impliment micro-animations on: 
+    - [] cards 
+        - on render 
+           - grid view - bobble
+           - bar view - grow from center
+        - adding to collection - grow and bobble back
+        - removing from collection - confetti 
+    - [] search icon - grow and in circle flick through letters
+    - [] logo on first page load - Y rotate circled letters sequentially
+    - [] light/dark theme icon - to plain circle and back to moon
+    - [] font size slider - grow/shrink circle
+    - [] reset icon - spin 
 ----
