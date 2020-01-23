@@ -14,7 +14,7 @@ import assignPhraseToEachFont from './controllers/assignPhraseToEachFont';
 
 /* components */
 import Header from './components/Header';
-import Nav from './components/Nav';
+import Toolbar from './components/Toolbar';
 import Footer from './components/Footer';
 
 /* pages */
@@ -29,7 +29,7 @@ export default function App() {
   const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);
   const [collectionList, setCollectionList] = useState([]);
-  const toolbar = <Nav {...{setCustomText, customText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
+  const toolbar = <Toolbar {...{setCustomText, customText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
   const [fontList, setFontList] = useState([]);
   const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
   const collection = {

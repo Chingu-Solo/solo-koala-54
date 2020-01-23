@@ -12,10 +12,10 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 - [Google Fonts API](https://developers.google.com/fonts/)
 - [axios](https://www.npmjs.com/package/axios)
 ### Specification
- - header
+- header
     - logo
-    - site menu/page linka
- - catalog
+    - site menu/page links
+- catalog
     - toolbar
         - search Google Fonts
         - customise sample text
@@ -28,16 +28,17 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
         - bar type
         - add to collection button
         - remove from collection button
-
+- featured
+- articles
+- about
     
 ### Structure
 #### Data flow
 ![Data flow Diagram](./assets/dataflow.png);
 
-
 ---- 
 ## TODO
-- [] rename Nav component to Toolbar
+- [x] rename Nav component to Toolbar
 - [] add some padding around collectionOpenButton
 - [] add margin between cards and toolbar on bar view
 - [] make search input not overlap display controls on small screen size 
