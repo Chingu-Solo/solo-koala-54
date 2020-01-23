@@ -22,6 +22,8 @@
     max-width: 25vw;
 }
 .toolbar__search__input {
+    width: 100%;
+    min-width: 100px;
     margin-left: 8px;
     border: none;
     font-size: 24px;
@@ -52,6 +54,8 @@
 }
 
 .toolbar__custom-text {
+    width: 100%;
+    min-width: 140px;
     margin-right: 24px;
     border: none;
     font-size: 24px;
@@ -132,6 +136,6 @@
     ". theme";
   }
   .toolbar__custom-text {
-    max-width: 50vw;
+    font-size: calc(2vw + 13px);
   }
 }
