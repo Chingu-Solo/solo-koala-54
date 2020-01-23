@@ -18,29 +18,29 @@ TODO make flow diagram here
 
 ---- 
 ## TODO
-- make components
-    - ~~header (~~structure~~/styling)~~
-    - nav
-        - ~~search~~
-            - make data field so suggests as you type
-                - pin myCollection to top
-        - custom text
-        - font size
-        - ~~light/dark mode~~
-        - ~~grid/list mode~~
-        - reset
-    - ~~main section~~
-    - ~~font cards~~
-        - ~~box type~~
-        - ~~list/bar type~~
-        - make add to myCollection button
-    -  back to top button
-    -  ~~footer~~
-- ~~make controllers~~
-    - ~~router~~
-    - ~~fetchPopularGoogleFonts~~
-    - ~~queryFonts~~
-    - myCollection: stores list of user added fonts
-    - bottomOfCatalogReached: loads more fonts when client is in range of page bottom
-- ~~get google font api key~~
+- [x] make components
+    - [x] header ([x] structure/styling)
+    - [x] nav
+        - [x] search
+            - ~~make data field so suggests as you type~~ (scraped)
+                - ~~pin myCollection to top~~ (scraped)
+        - [x] custom text
+        - [x] font size
+        - [x] light/dark mode
+        - [x] grid/list mode
+        - [x] reset
+    - [x] main section
+    - [x] font cards
+        - [x] box type
+        - [x] list/bar type
+        - [x] make add to myCollection button
+    - [x] back to top button
+    -  [x] footer
+- [x] make controllers
+    - [x] router
+    - [x] ~~fetchPopularGoogleFonts~~ fetchFonts and retrieveFontFileUrl
+    - [x] ~~queryFonts~~ querySearch
+    - [x] ~~myCollection:~~ Collection: stores list of user added fonts
+    - [x] ~~bottomOfCatalogReached:~~ OnPageBottom loads more fonts when client is in range of page bottom
+- [x] get google font api key
 ----
