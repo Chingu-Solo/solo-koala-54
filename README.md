@@ -54,7 +54,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
-- [] put full stops back into text in customTextGenerator and add to count for each segment used
+- [x] put full stops back into text in customTextGenerator and add to count for each segment used
 - [x] fix Using target="_blank" without rel="noopener noreferrer"
 - [x] fix can't update umounted state in BackToTop
 - [] fade in BackToTop
