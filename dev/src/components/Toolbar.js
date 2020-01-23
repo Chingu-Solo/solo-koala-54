@@ -3,7 +3,7 @@ import {
     useRouteMatch,
     Redirect
 } from "react-router-dom";
-import './styles/Nav.css';
+import './styles/Toolbar.css';
 import gridViewIcon from '../images/gridviewicon.svg';
 import barViewIcon from '../images/barviewicon.svg';
 import darkThemeIcon from '../images/darkthemeicon.svg';
@@ -11,7 +11,7 @@ import lightThemeIcon from '../images/lightthemeicon.svg';
 import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
 
-export default function Nav(props) {
+export default function Toolbar(props) {
     let match = useRouteMatch();
     let filter = useRouteMatch('/:page/:filter');
     const [query, setQuery] = useState(filter ? filter.params.filter : '');
