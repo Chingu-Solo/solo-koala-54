@@ -2,7 +2,6 @@
 .app {
   display: grid;
   place-items: center center;
-  grid-template-rows: 120px 200px auto;
   min-height: 100vh;
   background: var(--main-bg-colour);
   font-family: 'Galindo', display;
