@@ -41,7 +41,7 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 - [x] rename Nav component to Toolbar
 - [x] add some padding around collectionOpenButton
 - [x] add margin between cards and toolbar on bar view
-- [] make search input not overlap display controls on small screen size 
+- [x] make search input not overlap display controls on small screen size 
 - [] make decorative 'tiles' using fonts in featured page for featured page and apply grid styling
 - [] impliment micro-animations on: 
     - [] cards 
