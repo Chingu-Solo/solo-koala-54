@@ -58,7 +58,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [x] fix can't update umounted state in BackToTop
 - [] fade in BackToTop
 - [x] make OnPageBottom kick in earlier
-- [] use retrieveFontFileUrl for fonts in CollectionOpenButton instead of storing the url
+- [x] use retrieveFontFileUrl for fonts in CollectionOpenButton instead of storing the url
 - [] make collection list untuck and tuck back when fonts are added
 - [x] rename Nav component to Toolbar
 - [x] add some padding around collectionOpenButton
