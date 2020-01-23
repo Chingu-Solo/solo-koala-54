@@ -3,6 +3,22 @@
 ## Chingu Voyage Pre-Work Solo Project (Tier 2): *Favorite Fonts* ##
 An SPA that displays fonts from Google Fonts API sorted by popularity. Users can define a custom text, font size, and filter fonts by search term.
 
+## Features
+- Responsive layout
+- Instant search
+- Varied default sample text
+- Infinate scroll loading of fonts
+- User collection 
+
+## Design considerations
+As a reimplementation of the wonderfully built [Google Fonts](https://fonts.google.com/) website I wanted to expand on their minimalist feel of thin lines and simplicity, that lends itself so well to a fonts UI, with a bit more playfulness. 
+
+I design the logo to feel like alternating typewriter keys and press printed letters and the thin lines decorating the font cards as wires to give a sense they're held in place. 
+The tool bar compacts down well in being grouped by search, text control, display control, reset. 
+The open collection button displays a list of the last three added font that tucks away so it's present by not distracting.
+
+I choose to use an infinate scrolling method of loading more fonts over preallocating space and lazy loading. The search is currently very basic, it matches the query to the begining of font family names. So with time that's something I may improve. 
+
 ----
 ## Devolpment Info
 ### Dependancies
@@ -38,6 +54,7 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 
 ---- 
 ## TODO
+- [] make collection list untuck and tuck back when fonts are added
 - [x] rename Nav component to Toolbar
 - [x] add some padding around collectionOpenButton
 - [x] add margin between cards and toolbar on bar view
