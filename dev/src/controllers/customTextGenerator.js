@@ -13,8 +13,9 @@ export default function* customTextGenerator(approxLength = 150) {
             sentances.splice(0, lookForNthSegment%(sentances.length-1)); // remove from array sentances upto lookForNthSegment
             for (let sentance of sentances) {
                 if (letterCount <= approxLength) {
+                    lookForNthSegment++;
                     letterCount += sentance.length;
-                    phrase += sentance;
+                    phrase += sentance+'.';
                 } 
             }
             if (phrase.length > approxLength) {
