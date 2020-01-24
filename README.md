@@ -11,7 +11,7 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 - User collection 
 
 ## Design considerations
-As a reimplementation of the wonderfully built [Google Fonts](https://fonts.google.com/) website I wanted to expand on their minimalist feel of thin lines and simplicity, that lends itself so well to a fonts UI, with a bit more playfulness. 
+As a reimplementation of the wonderfully built [Google Fonts](https://fonts.google.com/) website I wanted to expand on their minimalist feel of thin lines and simplicity, that lends itself so well to a fonts UI with a bit more playfulness. 
 
 I design the logo to feel like alternating typewriter keys and press printed letters and the thin lines decorating the font cards as wires to give a sense they're held in place. 
 The tool bar compacts down well in being grouped by search, text control, display control, reset. 
@@ -58,8 +58,12 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 #### Data flow
 ![Data flow Diagram](./assets/dataflow.png);
 
+### Quirks 
+TODO
+
 ---- 
 ## TODO
+- [] comment the quirky bits of code 
 - [x] put full stops back into text in customTextGenerator and add to count for each segment used
 - [x] fix Using target="_blank" without rel="noopener noreferrer"
 - [x] fix can't update umounted state in BackToTop
