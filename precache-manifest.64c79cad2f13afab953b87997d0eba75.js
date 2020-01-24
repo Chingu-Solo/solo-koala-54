@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1f070a0cef4fb69474d6da0e9dea0ab8",
+    "revision": "4f6783a2b914b0b70e21e19f3d81d0c8",
     "url": "/solo-koala-54/index.html"
   },
   {
-    "revision": "d2b9cdf45a6ffd3bd78b",
+    "revision": "ed4bcbd16cbe45a3502b",
     "url": "/solo-koala-54/static/css/main.8caf45bd.chunk.css"
   },
   {
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/solo-koala-54/static/js/7.afef4f8c.chunk.js"
   },
   {
-    "revision": "d2b9cdf45a6ffd3bd78b",
-    "url": "/solo-koala-54/static/js/main.fa50e679.chunk.js"
+    "revision": "ed4bcbd16cbe45a3502b",
+    "url": "/solo-koala-54/static/js/main.46e1385d.chunk.js"
   },
   {
     "revision": "9ff0f9366178fb61abfe",
