@@ -64,7 +64,7 @@ export default function Main(props) {
             {showCollectionButton && <CollectionOpenButton list={collection.list} showCollection={() => setShowCollection(true)}/>}
             <BackToTop/>
             {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : <Cards {...{fontList, searchIndex, customText, filter, currentIndex, collection, fontSize, number: nCards}} />}
-            {fontList.length > 0 && <OnPageBottom exec={loadMoreCards} callback={handleResolveOnPageBottom} />}
+            {fontList.length > 0 && <OnPageBottom offsetPercent={50} exec={loadMoreCards} callback={handleResolveOnPageBottom} />}
         </main>
     );
 }
