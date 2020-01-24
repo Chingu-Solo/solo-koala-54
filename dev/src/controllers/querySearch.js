@@ -4,6 +4,5 @@ export default function querySearch(filter, index) {
     const thirdPass = index.filter(i => i.name.match(new RegExp(filter, 'i'))).map(font => font.index); // any cases that contain filter
     const queryIndex = new Set();  
     [...firstPass, ...seconfPass, ...thirdPass].forEach(i => queryIndex.add(i));
-    console.log(queryIndex)
     return [...queryIndex];
 }
