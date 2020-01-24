@@ -3,8 +3,7 @@ import './App.css';
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
 
 /* components */
@@ -55,7 +54,7 @@ export default function App() {
                     .then(assignPhraseToEachFont => assignPhraseToEachFont.default(fetchedFonts))
                       .then(fontsWithPhrases => setFontList(fontsWithPhrases))
                         .then(() => storedCollection && setCollectionList(JSON.parse(storedCollection)))
-                          .catch(err => console.err(err))
+                          .catch(err => console.error(err))
       return () => {
         setFontList(null);
         setCollectionList(null);

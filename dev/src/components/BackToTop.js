@@ -1,7 +1,7 @@
 import React, {useState, useRef, useLayoutEffect} from 'react';
 import icon from '../images/backToTop.svg';
-import throttle from '../utils/throttle';
-import './styles/BackToTop.css'
+import './styles/BackToTop.css';
+const throttle = () => import('../utils/throttle');
 
 export default function BackToTop() {
     const [showButton, setShowButton] = useState(false);
