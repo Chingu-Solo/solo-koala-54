@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Redirect
@@ -68,12 +68,9 @@ export default function App() {
   }, [collectionList]);
   return (
     <div className={'app '+(lightTheme ? 'light' : 'dark')}>
-      <Router basename="/solo-koala-54/">
+      <BrowserRouter basename="/solo-koala-54">
           <Header/>
           <Switch>
-            <Route path="/catalog">
-              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
-            </Route>
             <Route path="/Featured">
               <Featured />
             </Route>
@@ -84,11 +81,11 @@ export default function App() {
               <About />
             </Route>
             <Route path="/">
-              <Redirect to="/catalog" />
+              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
             </Route>
           </Switch>
           <Footer/>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
