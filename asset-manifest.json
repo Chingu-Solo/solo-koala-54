@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/solo-koala-54/static/css/main.8caf45bd.chunk.css",
+    "main.js": "/solo-koala-54/static/js/main.6cdb394e.chunk.js",
+    "main.js.map": "/solo-koala-54/static/js/main.6cdb394e.chunk.js.map",
+    "runtime-main.js": "/solo-koala-54/static/js/runtime-main.8261ffb0.js",
+    "runtime-main.js.map": "/solo-koala-54/static/js/runtime-main.8261ffb0.js.map",
+    "static/js/2.2fbb996f.chunk.js": "/solo-koala-54/static/js/2.2fbb996f.chunk.js",
+    "static/js/2.2fbb996f.chunk.js.map": "/solo-koala-54/static/js/2.2fbb996f.chunk.js.map",
+    "index.html": "/solo-koala-54/index.html",
+    "precache-manifest.15eeefcfdf70e2a9e17e5a94f892f297.js": "/solo-koala-54/precache-manifest.15eeefcfdf70e2a9e17e5a94f892f297.js",
+    "service-worker.js": "/solo-koala-54/service-worker.js",
+    "static/css/main.8caf45bd.chunk.css.map": "/solo-koala-54/static/css/main.8caf45bd.chunk.css.map",
+    "static/js/2.2fbb996f.chunk.js.LICENSE": "/solo-koala-54/static/js/2.2fbb996f.chunk.js.LICENSE",
+    "static/media/addtoclipboard.svg": "/solo-koala-54/static/media/addtoclipboard.7711d277.svg",
+    "static/media/addtocollectionicon.svg": "/solo-koala-54/static/media/addtocollectionicon.2b65d20d.svg",
+    "static/media/backToTop.svg": "/solo-koala-54/static/media/backToTop.54c1e9bc.svg",
+    "static/media/barviewicon.svg": "/solo-koala-54/static/media/barviewicon.e8176265.svg",
+    "static/media/Card.css": "/solo-koala-54/static/media/cardheaderbarbg.be69a4e6.svg",
+    "static/media/darkthemeicon.svg": "/solo-koala-54/static/media/darkthemeicon.260ea28b.svg",
+    "static/media/exit.svg": "/solo-koala-54/static/media/exit.33913ed0.svg",
+    "static/media/gridviewicon.svg": "/solo-koala-54/static/media/gridviewicon.025c8bb7.svg",
+    "static/media/lightthemeicon.svg": "/solo-koala-54/static/media/lightthemeicon.4a248cc9.svg",
+    "static/media/loading.gif": "/solo-koala-54/static/media/loading.e8ef5234.gif",
+    "static/media/logo.svg": "/solo-koala-54/static/media/logo.305c03d2.svg",
+    "static/media/logocondensed.svg": "/solo-koala-54/static/media/logocondensed.114c78b8.svg",
+    "static/media/removefromcollectionicon.svg": "/solo-koala-54/static/media/removefromcollectionicon.b9c456d5.svg",
+    "static/media/reseticon.svg": "/solo-koala-54/static/media/reseticon.b060339b.svg",
+    "static/media/searchicon.svg": "/solo-koala-54/static/media/searchicon.9d3b4968.svg",
+    "static/media/wiggerlyline.svg": "/solo-koala-54/static/media/wiggerlyline.9f59d788.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8261ffb0.js",
+    "static/js/2.2fbb996f.chunk.js",
+    "static/css/main.8caf45bd.chunk.css",
+    "static/js/main.6cdb394e.chunk.js"
+  ]
+}
