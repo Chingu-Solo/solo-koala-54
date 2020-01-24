@@ -21,6 +21,12 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ----
 ## Devolpment Info
+
+### Setup 
+1. run `npm install` (in root folder/this location of your cloned/downloaded repo)
+2. `cd dev/`
+3. `npm start`
+
 ### Dependancies
 - [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html)
 - [react-router-dom](https://www.npmjs.com/package/react-router-dom)
