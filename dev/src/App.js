@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Redirect
@@ -68,7 +68,7 @@ export default function App() {
   }, [collectionList]);
   return (
     <div className={'app '+(lightTheme ? 'light' : 'dark')}>
-      <Router basename="/solo-koala-54/">
+      <BrowserRouter basename="/solo-koala-54">
           <Header/>
           <Switch>
             <Route path="/catalog">
@@ -88,7 +88,7 @@ export default function App() {
             </Route>
           </Switch>
           <Footer/>
-      </Router>
+      </BrowserRouter>
     </div>
   );
 }
