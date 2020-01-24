@@ -12,7 +12,6 @@ import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
 
 export default function Toolbar(props) {
-    let match = useRouteMatch();
     let filter = useRouteMatch('/:page/:filter');
     const [query, setQuery] = useState(filter ? filter.params.filter : '');
     let [withRedirect, setWithRedirect] = useState(false);
@@ -48,7 +47,7 @@ export default function Toolbar(props) {
                 <button className="icon-button toolbar__theme-toggle" onClick={() => props.setLightTheme(!props.lightTheme)} title={props.lightTheme ? 'Dark theme' : 'Light theme'}><img src={props.lightTheme ? darkThemeIcon : lightThemeIcon} alt="" /></button>
             </div>
             <button className="icon-button toolbar__reset" onClick={handleReset} title="reset"><img className="toolbar__reset" src={resetIcon} alt="" /></button>
-            {withRedirect && <Redirect to={`${match.path}/${query}`}/>}
+            {withRedirect && <Redirect to={`${query}`}/>}
         </nav>
     )
 }

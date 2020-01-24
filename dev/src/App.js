@@ -71,9 +71,6 @@ export default function App() {
       <BrowserRouter basename="/solo-koala-54">
           <Header/>
           <Switch>
-            <Route path="/catalog">
-              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
-            </Route>
             <Route path="/Featured">
               <Featured />
             </Route>
@@ -84,7 +81,7 @@ export default function App() {
               <About />
             </Route>
             <Route path="/">
-              <Redirect to="/catalog" />
+              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
             </Route>
           </Switch>
           <Footer/>
