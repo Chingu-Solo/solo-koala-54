@@ -3,14 +3,8 @@ import './App.css';
 import {
   BrowserRouter,
   Switch,
-  Route,
-  Redirect
+  Route
 } from "react-router-dom";
-
-/* controllers */
-import fetchFonts from './controllers/fetchFonts';
-import buildSearchIndex from './controllers/buildSearchIndex';
-import assignPhraseToEachFont from './controllers/assignPhraseToEachFont';
 
 /* components */
 import Header from './components/Header';
@@ -49,15 +43,18 @@ export default function App() {
   let searchIndex = useRef([]);
     useEffect(() => {
       const storedCollection = localStorage.getItem('collection');
-      fetchFonts().then(fonts => {
-        buildSearchIndex(fonts).then(index => {
-          assignPhraseToEachFont(fonts).then(fonts => {
-            searchIndex.current = index;
-            setFontList(fonts);
-            storedCollection && setCollectionList(JSON.parse(storedCollection));
-          });
-        });
-      });
+      let fetchedFonts;
+      import('./controllers/fetchFonts')
+        .then(fetchFonts => fetchFonts.default())
+          .then(fonts => { fetchedFonts = fonts; })
+            .then(() => import('./controllers/buildSearchIndex'))
+              .then(buildSearchIndex => buildSearchIndex.default(fetchedFonts))
+                .then(index => { searchIndex.current = index; })
+                  .then(() => import('./controllers/assignPhraseToEachFont'))
+                    .then(assignPhraseToEachFont => assignPhraseToEachFont.default(fetchedFonts))
+                      .then(fontsWithPhrases => setFontList(fontsWithPhrases))
+                        .then(() => storedCollection && setCollectionList(JSON.parse(storedCollection)))
+                          .catch(err => console.error(err))
       return () => {
         setFontList(null);
         setCollectionList(null);

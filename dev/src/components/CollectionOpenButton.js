@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import wiggerlyLine from '../images/wiggerlyline.svg';
 import { StyleSheet, css } from 'aphrodite/no-important';
-import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 import './styles/CollectionOpenButton.css';
+const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl');
 
 export default function CollectionOpenButton(props) {
     const firstTimeLoading = useRef(true);
@@ -36,8 +36,10 @@ export default function CollectionOpenButton(props) {
                     .then(url => {
                         urls[font.family] = url;
                     })
+                    .catch(err => console.error(err))
                 ))
-                .then(() => setFontUrls(urls));   
+                .then(() => setFontUrls(urls))
+                .catch(err => console.error(err));   
         } 
     }, [props.list]);
     return (

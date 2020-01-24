@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, css } from 'aphrodite/no-important';
 import './styles/Card.css';
-import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
 import loading from '../images/loading.gif';
+const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl');
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
@@ -34,9 +34,11 @@ export default function Card(props) {
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
     useEffect(() => {
         let active = true;
-        retrieveFontFileUrl(name, props.files).then(url => {
-            active && setFontUrl(url);
-        });        
+        retrieveFontFileUrl()
+            .then(retrieveFontFileUrl => retrieveFontFileUrl.default(name, props.files))
+                .then(url => active && setFontUrl(url))
+                    .catch(err => console.log(err));  
+
           return () => active = false;
         }, [name, props.files]);
     return (
