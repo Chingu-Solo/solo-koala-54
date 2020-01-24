@@ -68,7 +68,7 @@ export default function App() {
   }, [collectionList]);
   return (
     <div className={'app '+(lightTheme ? 'light' : 'dark')}>
-      <Router>
+      <Router basename="/solo-koala-54/">
           <Header/>
           <Switch>
             <Route path="/catalog">
