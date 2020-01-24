@@ -12,7 +12,7 @@ import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
 
 export default function Toolbar(props) {
-    let filter = useRouteMatch('/:page/:filter');
+    let filter = useRouteMatch('/:filter');
     const [query, setQuery] = useState(filter ? filter.params.filter : '');
     let [withRedirect, setWithRedirect] = useState(false);
     const search = event => {
