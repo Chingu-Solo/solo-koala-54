@@ -58,15 +58,13 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 #### Data flow
 ![Data flow Diagram](./assets/dataflow.png);
 
-### Quirks 
-TODO
-
 ## Deployment Info
-TODO
+### To deploy 
+1. `cd dev/`
+2. `npm run deploy`
 
 ---- 
 ## TODO
-- [] comment the quirky bits of code 
 - [x] put full stops back into text in customTextGenerator and add to count for each segment used
 - [x] fix Using target="_blank" without rel="noopener noreferrer"
 - [x] fix can't update umounted state in BackToTop
