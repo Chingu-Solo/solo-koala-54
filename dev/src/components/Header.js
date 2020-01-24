@@ -15,7 +15,7 @@ function Header() {
             <img className="pageHeader__logo" src={logo} alt="Solo-Koala-54 via Google Fonts" />
             <img className="pageHeader__logo--condensed" src={logoCondensed} alt="Solo-Koala-54 via Google Fonts" />
             <nav className="pageHeader__menu">
-                <Link className={`pageHeader__link ${match.url === '/' && 'pageHeader__link--active'}`} to="/">Catalog</Link>
+                <Link className={`pageHeader__link ${match.url.match('/') && 'pageHeader__link--active'}`} to="/">Catalog</Link>
                 <Link className={`pageHeader__link ${match.url === '/featured' && 'pageHeader__link--active'}`} to="/featured">Featured</Link>
                 <Link className={`pageHeader__link ${match.url === '/articles' && 'pageHeader__link--active'}`} to="/articles">Articles</Link>
                 <Link className={`pageHeader__link ${match.url === '/about' && 'pageHeader__link--active'}`} to="/about">About</Link>
