@@ -4,7 +4,7 @@ import './styles/Card.css';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
 import loading from '../images/loading.gif';
-const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl')
+const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl');
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
@@ -34,7 +34,8 @@ export default function Card(props) {
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
     useEffect(() => {
         let active = true;
-        retrieveFontFileUrl(name, props.files)
+        retrieveFontFileUrl()
+            .then(retrieveFontFileUrl => retrieveFontFileUrl.default(name, props.files))
                 .then(url => active && setFontUrl(url))
                     .catch(err => console.log(err));  
 
