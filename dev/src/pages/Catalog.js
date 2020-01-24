@@ -12,7 +12,7 @@ function Catalog(props) {
   return (<>
       {props.toolbar}
       <Switch>
-        <Route path={`${match.path}/:filter`}>
+        <Route path={`${match.path}:filter`}>
           <Main {...{fontList, searchIndex, gridView, customText, collection, fontSize}} />
         </Route>
         <Route path={match.path}>
