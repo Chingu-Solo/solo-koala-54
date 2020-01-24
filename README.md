@@ -61,6 +61,9 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 ### Quirks 
 TODO
 
+## Deployment Info
+TODO
+
 ---- 
 ## TODO
 - [] comment the quirky bits of code 
