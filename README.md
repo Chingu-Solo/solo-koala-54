@@ -5,7 +5,7 @@ An SPA that displays fonts from Google Fonts API sorted by popularity. Users can
 
 ## Features
 - Responsive layout
-- Instant search
+- Instant search, ordered priority, match terms starting with query first, then terms with words that start with query, then terms that just contain query
 - Varied default sample text
 - Infinate scroll loading of fonts
 - User collection 
