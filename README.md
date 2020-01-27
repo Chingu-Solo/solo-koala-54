@@ -65,19 +65,15 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
-- [x] put full stops back into text in customTextGenerator and add to count for each segment used
-- [x] fix Using target="_blank" without rel="noopener noreferrer"
-- [x] fix can't update umounted state in BackToTop
-- [] fade in BackToTop
-- [x] make OnPageBottom kick in earlier
-- [x] use retrieveFontFileUrl for fonts in CollectionOpenButton instead of storing the url
-- [] make collection list untuck and tuck back when fonts are added
-- [x] rename Nav component to Toolbar
-- [x] add some padding around collectionOpenButton
-- [x] add margin between cards and toolbar on bar view
-- [x] make search input not overlap display controls on small screen size 
-- [] make decorative 'tiles' using fonts in featured page for featured page and apply grid styling
-- [] impliment micro-animations on: 
+- [] bug/BackToTop-not-responsive
+- [] style/BackToTop-make-background-rounded
+- [] feature/add-dependency-react-in-viewport-on-loading-fonts
+- [] feature/make-search-order-by-popular
+- [] refactor/reduce-code
+- [] style/decorative-font-tiles-in-featured-page
+- [] style/micro-animations
+    - [] fade in BackToTop
+    - [] collection list - untuck and tuck back when fonts are added
     - [] cards 
         - on render 
            - grid view - bobble
