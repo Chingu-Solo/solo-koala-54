@@ -24,6 +24,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ### Setup 
 1. `cd dev/`
+2. make new file named .env with REACT_APP_GOOGLE_FONT_API_KEY=\[your-api-key-here\]
 2. run `npm install` (in root folder/this location of your cloned/downloaded repo)
 3. `npm start`
 
@@ -65,6 +66,8 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
+- [] bug/basename-not-set-on-first-load
+- [] bug/handleEvent-is-not-callable-when-scrolling
 - [] bug/BackToTop-not-responsive
 - [] style/BackToTop-make-background-rounded
 - [] feature/add-dependency-react-in-viewport-on-loading-fonts
