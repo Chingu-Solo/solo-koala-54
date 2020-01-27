@@ -67,8 +67,8 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 ---- 
 ## TODO
 - [] bug/basename-not-set-on-first-load
-- [] bug/handleEvent-is-not-callable-when-scrolling
-- [] bug/BackToTop-not-responsive
+- [x] bug/handleEvent-is-not-callable-when-scrolling
+- [x] bug/BackToTop-not-responsive
 - [x] style/BackToTop-make-background-rounded
 - [] feature/add-dependency-react-in-viewport-on-loading-fonts
 - [] feature/make-search-order-by-popular
