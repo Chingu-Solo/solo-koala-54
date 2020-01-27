@@ -1,7 +1,7 @@
 import React, {useState, useRef, useLayoutEffect} from 'react';
 import icon from '../images/backToTop.svg';
 import './styles/BackToTop.css';
-const throttle = () => import('../utils/throttle');
+import throttle from '../utils/throttle';
 
 export default function BackToTop() {
     const [showButton, setShowButton] = useState(false);
@@ -19,13 +19,9 @@ export default function BackToTop() {
     useLayoutEffect(() => {
         if (document && !listingForScroll.current) {
             listingForScroll.current = true;
-            document.addEventListener('scroll', throttle(checkPos, 1500));
-            checkPos(); // check intial loaded page
+            document.addEventListener('scroll', throttle(() => checkPos(), 500));
         }
-        return () => {
-            listingForScroll.current = false;
-            document.removeEventListener('scroll', throttle(checkPos, 1500));
-        }
+        return () => document.removeEventListener('scroll', throttle(() => checkPos(), 500));
     });
     return (<>
         {showButton ? <img className="back-to-top" src={icon} onClick={() => window.scrollTo(0, 0)} alt="Back to top" title="Back to top" />:
