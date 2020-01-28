@@ -4,7 +4,7 @@ export default async function fetchFonts() {
     'https://www.googleapis.com/webfonts/v1/webfonts?sort=popularity&key='+myApiKey, 
     {headers: { 'Content-Type': 'application/json'}});
   const listObj = await list.json();
-  const listItems = await listObj.items;
+  const listItems = await listObj.items.map((item, i) => {return {...item, index: i} }); // attaching index for use in querySearch
   const fontListWithPhrases = await import('./assignPhraseToEachFont').then(assignPhraseToEachFont => assignPhraseToEachFont.default(listItems));
   return await fontListWithPhrases
 } 
