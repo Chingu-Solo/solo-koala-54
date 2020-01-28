@@ -73,6 +73,9 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [] feature/add-dependency-react-in-viewport-on-loading-fonts
 - [] feature/make-search-order-by-popular
 - [] refactor/reduce-code
+    - [] use react-query to reduce propagating data
+    - [] remove unnecessary clutter 
+    - [] explain/comment any necessary clutter 
 - [] style/decorative-font-tiles-in-featured-page
 - [] style/micro-animations
     - [] fade in BackToTop
