@@ -34,6 +34,8 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [aphrodite](https://github.com/Khan/aphrodite)
 - [Google Fonts API](https://developers.google.com/fonts/)
 - [axios](https://www.npmjs.com/package/axios)
+- [react-query](https://www.npmjs.com/package/react-query)
+- [react-in-viewport](https://www.npmjs.com/package/react-in-viewport)
 ### Specification
 - header
     - logo
