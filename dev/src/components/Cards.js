@@ -2,14 +2,16 @@ import React from 'react';
 import Card from '../components/Card';
 import { useQuery } from 'react-query';
 import fetchFonts from '../controllers/fetchFonts';
+import querySearch from '../controllers/querySearch';
 import loading from '../images/loading.gif';
 
 
 export default function Cards(props) {
-    const {number, filter, currentIndex, customText, collection, fontSize} = props;
+    const {number, filter, customText, collection, fontSize} = props;
     const {data, error} = useQuery('fontList', fetchFonts);
     const makeCards = () => {
         const fontList = data;
+        const currentIndex = querySearch(filter, fontList);
         if (!fontList || fontList.length < 1) {
             return <p>no fonts to load :S</p>
         }
