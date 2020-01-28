@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import {
   BrowserRouter,
@@ -24,7 +24,6 @@ export default function App() {
   const [lightTheme, setLightTheme] = useState(true);
   const [collectionList, setCollectionList] = useState([]);
   const toolbar = <Toolbar {...{setCustomText, customText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
-  const [fontList, setFontList] = useState([]);
   const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
   const collection = {
     addToCollection: font => setCollectionList([...collectionList, font]),
@@ -40,26 +39,6 @@ export default function App() {
       }
     }
   }
-  let searchIndex = useRef([]);
-    useEffect(() => {
-      const storedCollection = localStorage.getItem('collection');
-      let fetchedFonts;
-      import('./controllers/fetchFonts')
-        .then(fetchFonts => fetchFonts.default())
-          .then(fonts => { fetchedFonts = fonts; })
-            .then(() => import('./controllers/buildSearchIndex'))
-              .then(buildSearchIndex => buildSearchIndex.default(fetchedFonts))
-                .then(index => { searchIndex.current = index; })
-                  .then(() => import('./controllers/assignPhraseToEachFont'))
-                    .then(assignPhraseToEachFont => assignPhraseToEachFont.default(fetchedFonts))
-                      .then(fontsWithPhrases => setFontList(fontsWithPhrases))
-                        .then(() => storedCollection && setCollectionList(JSON.parse(storedCollection)))
-                          .catch(err => console.error(err))
-      return () => {
-        setFontList(null);
-        setCollectionList(null);
-      }
-  }, []);
   useEffect(() => {
     localStorage.setItem('collection', JSON.stringify(collectionList));
   }, [collectionList]);
@@ -78,7 +57,7 @@ export default function App() {
               <About />
             </Route>
             <Route path="/">
-              <Catalog {...{fontList, searchIndex, customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
+              <Catalog {...{customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
             </Route>
           </Switch>
           <Footer/>
