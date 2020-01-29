@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Cards from './Cards';
 import './styles/Main.css';
-import { useParams } from "react-router-dom";
+import { useRouteMatch } from "react-router-dom";
 import CollectionOpenButton from './CollectionOpenButton';
 import Collection from './Collection';
 import BackToTop from './BackToTop';
 
 export default function Main(props) {
-    let { filter } = useParams('/:filter');
-    const {customText, collection, gridView, fontSize} = props;
+    const match = useRouteMatch('/:filter'); // using path for query so queries can be bookmarked
+    let filter = match ? match.params.filter : undefined;
     const [showCollection, setShowCollection] = useState(false);
     const [showCollectionButton, setShowCollectionButton] = useState(false);
     const refCloseCollectionIfNavChange = useRef(filter+gridView+customText);
