@@ -4,7 +4,6 @@ import './styles/Card.css';
 import removeIcon from '../images/removefromcollectionicon.svg';
 import addIcon from '../images/addtocollectionicon.svg';
 import loading from '../images/loading.gif';
-const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl');
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
