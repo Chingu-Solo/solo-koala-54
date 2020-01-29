@@ -34,6 +34,8 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [aphrodite](https://github.com/Khan/aphrodite)
 - [Google Fonts API](https://developers.google.com/fonts/)
 - [axios](https://www.npmjs.com/package/axios)
+- [react-query](https://www.npmjs.com/package/react-query)
+- [react-in-viewport](https://www.npmjs.com/package/react-in-viewport)
 ### Specification
 - header
     - logo
@@ -66,15 +68,13 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
+- [] bug/OnpageBottom-state-update-on-unmounted
 - [] bug/basename-not-set-on-first-load
-- [x] bug/handleEvent-is-not-callable-when-scrolling
-- [x] bug/BackToTop-not-responsive
-- [x] style/BackToTop-make-background-rounded
 - [] feature/add-dependency-react-in-viewport-on-loading-fonts
 - [] feature/make-search-order-by-popular
-- [] refactor/reduce-code
-    - [] use react-query to reduce propagating data
-    - [] remove unnecessary clutter 
+- [x] refactor/reduce-code
+    - [x] use react-query to reduce propagating data
+    - [x] remove unnecessary clutter 
     - [] explain/comment any necessary clutter 
 - [] style/decorative-font-tiles-in-featured-page
 - [] style/micro-animations
