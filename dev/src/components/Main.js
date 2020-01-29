@@ -9,10 +9,10 @@ import BackToTop from './BackToTop';
 export default function Main(props) {
     const match = useRouteMatch('/:filter'); // using path for query so queries can be bookmarked
     let filter = match ? match.params.filter : undefined;
+    const {customText, gridView, fontSize, collection} = props;
     const [showCollection, setShowCollection] = useState(false);
     const [showCollectionButton, setShowCollectionButton] = useState(false);
     const refCloseCollectionIfNavChange = useRef(filter+gridView+customText);
-
     useEffect(() => {
         if (!showCollection && collection.list.length > 0) {
             setShowCollectionButton(true);
