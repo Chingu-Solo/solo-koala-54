@@ -59,6 +59,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
     
 ### Structure
 #### Data flow
+TODO: update since refactored
 ![Data flow Diagram](./assets/dataflow.png);
 
 ## Deployment Info
