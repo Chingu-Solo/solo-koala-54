@@ -1,47 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4f6783a2b914b0b70e21e19f3d81d0c8",
+    "revision": "c7dab52718921c04ee31bf8ced06b295",
     "url": "/solo-koala-54/index.html"
   },
   {
-    "revision": "ed4bcbd16cbe45a3502b",
-    "url": "/solo-koala-54/static/css/main.8caf45bd.chunk.css"
+    "revision": "c52b59c6ee436120b52b",
+    "url": "/solo-koala-54/static/css/main.c28af831.chunk.css"
   },
   {
-    "revision": "dbd2cb933b9257af71ba",
-    "url": "/solo-koala-54/static/js/0.63a9a023.chunk.js"
+    "revision": "2050f0d4662b163d501e",
+    "url": "/solo-koala-54/static/js/0.8046a3a8.chunk.js"
   },
   {
-    "revision": "cbed0732e2d836e671c8",
-    "url": "/solo-koala-54/static/js/1.7bec398b.chunk.js"
+    "revision": "d3e899e8f142b7ec20e3",
+    "url": "/solo-koala-54/static/js/1.e82a39b5.chunk.js"
   },
   {
-    "revision": "c8965e4cd179bd8c5218",
-    "url": "/solo-koala-54/static/js/4.bff5471b.chunk.js"
+    "revision": "49c64199c094dfe5084d",
+    "url": "/solo-koala-54/static/js/4.593b8352.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/solo-koala-54/static/js/4.bff5471b.chunk.js.LICENSE"
+    "url": "/solo-koala-54/static/js/4.593b8352.chunk.js.LICENSE"
   },
   {
-    "revision": "2067761bd6b2cd433f74",
-    "url": "/solo-koala-54/static/js/5.60fa8554.chunk.js"
+    "revision": "65d4805e93c19512f969",
+    "url": "/solo-koala-54/static/js/5.596e26de.chunk.js"
   },
   {
-    "revision": "46767ac10ff6ffaee5d8",
-    "url": "/solo-koala-54/static/js/6.4691d99a.chunk.js"
+    "revision": "c52b59c6ee436120b52b",
+    "url": "/solo-koala-54/static/js/main.1ada7478.chunk.js"
   },
   {
-    "revision": "950e530ad59edb464b23",
-    "url": "/solo-koala-54/static/js/7.afef4f8c.chunk.js"
-  },
-  {
-    "revision": "ed4bcbd16cbe45a3502b",
-    "url": "/solo-koala-54/static/js/main.46e1385d.chunk.js"
-  },
-  {
-    "revision": "9ff0f9366178fb61abfe",
-    "url": "/solo-koala-54/static/js/runtime-main.265dd7a8.js"
+    "revision": "e7194a93913e361161ca",
+    "url": "/solo-koala-54/static/js/runtime-main.a0c75def.js"
   },
   {
     "revision": "7711d27784341618c98a6c73edea3e7d",
