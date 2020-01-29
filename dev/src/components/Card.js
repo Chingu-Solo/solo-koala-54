@@ -8,9 +8,9 @@ const retrieveFontFileUrl = () => import('../controllers/retrieveFontFileUrl');
 
 export default function Card(props) {
     const [fontUrl, setFontUrl] = useState(false);
-    const name = props.family;
+    const name = props.font.family;
     const googleFont = !fontUrl ? { fontFamily: 'inherit' } : {
-        fontFamily: props.family,
+        fontFamily: props.font.family,
         fontStyle: "normal",
         fontWeight: "normal",
         src: `url('${fontUrl}') format('truetype')`
@@ -34,11 +34,9 @@ export default function Card(props) {
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;
     useEffect(() => {
         let active = true;
-        retrieveFontFileUrl()
-            .then(retrieveFontFileUrl => retrieveFontFileUrl.default(name, props.files))
+        props.getFontFile.add(props.font)
                 .then(url => active && setFontUrl(url))
                     .catch(err => console.log(err));  
-
           return () => active = false;
         }, [name, props.files]);
     return (
@@ -50,7 +48,7 @@ export default function Card(props) {
                     <span className={'card__heading__title '+css(styles().fontHeading)}>{name}</span>
                 </header>
                 {!fontUrl ? <img src={loading} alt="loading..." /> : <p className={'card__text '+css(styles().font)}>{
-                props.customText !== '' ? props.customText : props.phrase}</p>}
+                props.customText !== '' ? props.customText : props.font.phrase}</p>}
             </div>
     )
 } 
