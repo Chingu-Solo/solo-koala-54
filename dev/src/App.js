@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter,
@@ -8,7 +8,6 @@ import {
 
 /* components */
 import Header from './components/Header';
-import Toolbar from './components/Toolbar';
 import Footer from './components/Footer';
 
 /* pages */
@@ -18,30 +17,7 @@ import Articles from './pages/Articles';
 import About from './pages/About';
 
 export default function App() {
-  const [customText, setCustomText] = useState('');
-  const [fontSize, setFontSize] = useState(18);
-  const [gridView, setGridView] = useState(true);
   const [lightTheme, setLightTheme] = useState(true);
-  const [collectionList, setCollectionList] = useState([]);
-  const toolbar = <Toolbar {...{setCustomText, customText, fontSize, setFontSize, gridView, setGridView, lightTheme, setLightTheme, setCollectionList}} />;
-  const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
-  const collection = {
-    addToCollection: font => setCollectionList([...collectionList, font]),
-    removeFromCollection: name => {
-      const index = getCollectionIndex(name);
-      if (index >= 0) {
-        const tempList = [...collectionList];
-        tempList.splice(index, 1);
-        setCollectionList(tempList);
-      }
-      else {
-        console.error(`Tried removing ${name} from collection but it's not here: ${collectionList.map(font => font.family)}`);
-      }
-    }
-  }
-  useEffect(() => {
-    localStorage.setItem('collection', JSON.stringify(collectionList));
-  }, [collectionList]);
   return (
     <div className={'app '+(lightTheme ? 'light' : 'dark')}>
       <BrowserRouter basename="/solo-koala-54">
@@ -57,7 +33,7 @@ export default function App() {
               <About />
             </Route>
             <Route path="/">
-              <Catalog {...{customText, toolbar, fontSize, gridView, collection:{...collection, list: collectionList}}}/>
+              <Catalog {...{lightTheme, setLightTheme}}/>
             </Route>
           </Switch>
           <Footer/>
