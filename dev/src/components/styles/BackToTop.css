@@ -4,6 +4,7 @@
     right: 24px;
     z-index: 300;
     background: var(--main-bg-colour);
+    border-radius: 50%;
 }
 .dark .back-to-top {
     background: var(--dark-bg-colour);

@@ -24,6 +24,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ### Setup 
 1. `cd dev/`
+2. make new file named .env with REACT_APP_GOOGLE_FONT_API_KEY=\[your-api-key-here\]
 2. run `npm install` (in root folder/this location of your cloned/downloaded repo)
 3. `npm start`
 
@@ -33,6 +34,8 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [aphrodite](https://github.com/Khan/aphrodite)
 - [Google Fonts API](https://developers.google.com/fonts/)
 - [axios](https://www.npmjs.com/package/axios)
+- [react-query](https://www.npmjs.com/package/react-query)
+- [react-in-viewport](https://www.npmjs.com/package/react-in-viewport)
 ### Specification
 - header
     - logo
@@ -65,19 +68,18 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 
 ---- 
 ## TODO
-- [x] put full stops back into text in customTextGenerator and add to count for each segment used
-- [x] fix Using target="_blank" without rel="noopener noreferrer"
-- [x] fix can't update umounted state in BackToTop
-- [] fade in BackToTop
-- [x] make OnPageBottom kick in earlier
-- [x] use retrieveFontFileUrl for fonts in CollectionOpenButton instead of storing the url
-- [] make collection list untuck and tuck back when fonts are added
-- [x] rename Nav component to Toolbar
-- [x] add some padding around collectionOpenButton
-- [x] add margin between cards and toolbar on bar view
-- [x] make search input not overlap display controls on small screen size 
-- [] make decorative 'tiles' using fonts in featured page for featured page and apply grid styling
-- [] impliment micro-animations on: 
+- [] bug/OnpageBottom-state-update-on-unmounted
+- [] bug/basename-not-set-on-first-load
+- [] feature/add-dependency-react-in-viewport-on-loading-fonts
+- [] feature/make-search-order-by-popular
+- [x] refactor/reduce-code
+    - [x] use react-query to reduce propagating data
+    - [x] remove unnecessary clutter 
+    - [] explain/comment any necessary clutter 
+- [] style/decorative-font-tiles-in-featured-page
+- [] style/micro-animations
+    - [] fade in BackToTop
+    - [] collection list - untuck and tuck back when fonts are added
     - [] cards 
         - on render 
            - grid view - bobble
