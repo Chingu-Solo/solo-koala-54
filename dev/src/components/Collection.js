@@ -4,9 +4,9 @@ import './styles/Collection.css';
 import exitIcon from '../images/exit.svg';
 import copyIcon from '../images/addtoclipboard.svg';
 
-export default function Collection(props) {
-    const uri = `https://fonts.googleapis.com/css?family=${props.list.map((font, i) => ((i > 0) ? `|` : '')+font.family.replace(' ', '+')).join('')}&display=swap`;
-    const cards = props.list.map(font => <Card key={font.family+'card'}  {...font} isInCollection={true} removeFromCollection={props.removeFromCollection} />);
+export default function Collection(props) { /* props expected: list: [{font, customText, fontSize, removeFromCollection, closeCollection] */
+    const uri = `https://fonts.googleapis.com/css?family=${props.list.map((item, i) => ((i > 0) ? `|` : '')+item.font.family.replace(' ', '+')).join('')}&display=swap`;
+    const cards = props.list.map(item => <Card key={item.font.family+'card'}  font={item.font} isInCollection={true} removeFromCollection={props.removeFromCollection} />);
     const embedInHeadTextArea = useRef();
     const importTextArea = useRef();
     const copyToClipboard = ref => {
@@ -15,7 +15,8 @@ export default function Collection(props) {
         
     }
     const cssFontsRefs = {};
-    const css = props.list.map(font =>  {
+    const css = props.list.map(item =>  {
+        const font = item.font;
         cssFontsRefs[font.family] = {};
         return (
             <div className="collection__css__font-family" key={font.family+'css'}>
