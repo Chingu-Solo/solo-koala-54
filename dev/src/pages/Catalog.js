@@ -8,7 +8,7 @@ function Catalog(props) {
   const [fontSize, setFontSize] = useState(18);
   const [gridView, setGridView] = useState(true);
   const [collectionList, setCollectionList] = useState([]);
-  const getCollectionIndex = name => collectionList.findIndex(font => font.family === name);
+  const getCollectionIndex = name => collectionList.findIndex(item => item.font.family === name);
   const collection = {
       addToCollection: font => setCollectionList([...collectionList, font]),
       removeFromCollection: name => {
