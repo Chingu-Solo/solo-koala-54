@@ -9,7 +9,7 @@ import CardText from './CardText';
 import retrieveFontFileUrl from '../controllers/retrieveFontFileUrl';
 
 export default function Card(props) {
-    const {font, customText, fontSize} = props;
+    const {font, customText, fontSize, closeCollection} = props;
     const name = font.family;
     const files = font.files;
     const {data, error} = useQuery([name, { name, files }], retrieveFontFileUrl);
@@ -17,7 +17,7 @@ export default function Card(props) {
         props.removeFromCollection(name);
     }
     const addToCollection = () => {
-        props.addToCollection({...props});
+        props.addToCollection({font, customText, fontSize, removeFromCollection, closeCollection});
     }
     const headerTitle = `${props.isInCollection ? 'Remove' : 'Add'} ${name} ${props.isInCollection ? 'from' : 'to'} collection`;
     const addRemoveOnclick = props.isInCollection ? removeFromCollection : addToCollection;

@@ -25,13 +25,13 @@ function Catalog(props) {
   }
   Object.assign(collection, {list: collectionList});
   useEffect(() => {
-      localStorage.setItem('collection', JSON.stringify(collectionList));
+      return () => localStorage.setItem('collection', JSON.stringify(collectionList));
   }, [collectionList]);
   useEffect(() => {
       const storedCollection = localStorage.getItem('collection');
       if (storedCollection) {
-      const list = JSON.parse(storedCollection);
-      Array.isArray(list) && setCollectionList(list);
+        const list = JSON.parse(storedCollection);
+        Array.isArray(list) && setCollectionList(list);
       }
   }, []);
   return (<>

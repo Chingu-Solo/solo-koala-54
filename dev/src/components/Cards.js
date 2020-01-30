@@ -37,7 +37,7 @@ export default function Cards(props) {
                 break;
             }
             else {
-                let inCollection = collection.list.map(f => f.hasOwnProperty('family') && f.family).includes(font.family);
+                let inCollection = collection.list.map(f => f.font.family).includes(font.family);
                 newCards.push(<LazyLoad key={font.family+'card'}  height={200} once ><Card 
                     {...{font, ...collection, customText, fontSize}} 
                     isInCollection={inCollection}
