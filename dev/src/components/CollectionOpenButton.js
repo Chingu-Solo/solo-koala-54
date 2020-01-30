@@ -15,7 +15,8 @@ export default function CollectionOpenButton(props) {
     }
     const [fontUrls, setFontUrls] = useState({});
     const styles = {};
-    props.list.forEach(font => {
+    props.list.forEach(item => {
+        const font = item.font;
         if (firstTimeLoading.current) {
             firstTimeLoading.current = false;
             const googleFont = !fontUrls.hasOwnProperty(font.family) ? { fontFamily: 'inherit' } : {
@@ -28,13 +29,13 @@ export default function CollectionOpenButton(props) {
             styles[font.family] = StyleSheet.create({font: {fontFamily: font.family} });
         }
     });
-    const fontsInCollection = () => props.list.map((font, i, arr) => (arr.length-i <= 3) ? <div key={font.family+'collectionList'} className={font.hasOwnProperty('styles') ? css(styles[font.family].font) : ''}>{i+1}. {font.family}</div> : false).filter(font => font);
+    const fontsInCollection = () => props.list.map((item, i, arr) => (arr.length-i <= 3) ? <div key={item.font.family+'collectionList'} className={css(styles[item.font.family].font)}>{i+1}. {item.font.family}</div> : false).filter(font => font);
     useEffect(() => {
         if (firstTimeLoading.current) {
             const urls = {};
-            Promise.all(props.list.map(font => retrieveFontFileUrl(font.family, font.files)
+            Promise.all(props.list.map(item => retrieveFontFileUrl(item.font.family, item.font.files)
                     .then(url => {
-                        urls[font.family] = url;
+                        urls[item.font.family] = url;
                     })
                     .catch(err => console.error(err))
                 ))
