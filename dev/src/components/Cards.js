@@ -5,8 +5,6 @@ import fetchFonts from '../controllers/fetchFonts';
 import querySearch from '../controllers/querySearch';
 import OnPageBottom from '../controllers/OnPageBottom';
 import loading from '../images/loading.gif';
-import StackFetchFontFile from '../controllers/StackFetchFontFile';
-const getFontFile = new StackFetchFontFile();
 
 export default function Cards(props) {
     const {filter, customText, collection, fontSize} = props;
@@ -41,7 +39,7 @@ export default function Cards(props) {
                 let inCollection = collection.list.map(f => f.hasOwnProperty('family') && f.family).includes(font.family);
                 newCards.push(<Card 
                     key={font.family+'card'} 
-                    {...{font, ...collection, customText, fontSize, getFontFile}} 
+                    {...{font, ...collection, customText, fontSize}} 
                     isInCollection={inCollection}
                 />);
             }
