@@ -5,6 +5,7 @@ import fetchFonts from '../controllers/fetchFonts';
 import querySearch from '../controllers/querySearch';
 import OnPageBottom from '../controllers/OnPageBottom';
 import loading from '../images/loading.gif';
+import LazyLoad from 'react-lazyload';
 
 export default function Cards(props) {
     const {filter, customText, collection, fontSize} = props;
@@ -37,11 +38,10 @@ export default function Cards(props) {
             }
             else {
                 let inCollection = collection.list.map(f => f.hasOwnProperty('family') && f.family).includes(font.family);
-                newCards.push(<Card 
-                    key={font.family+'card'} 
+                newCards.push(<LazyLoad key={font.family+'card'}  height={200} once ><Card 
                     {...{font, ...collection, customText, fontSize}} 
                     isInCollection={inCollection}
-                />);
+                /></LazyLoad>);
             }
             
         }  
