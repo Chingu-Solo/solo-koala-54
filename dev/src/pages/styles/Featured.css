@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+JP|Open+Sans|Roboto&display=swap');
+
 .featured {
     width: 80%;
     max-width: 1200px;
@@ -6,14 +8,33 @@
     place-self: start center;
 }
 
+.featured__noto-fonts {
+    
+}
 
-
+.featured__font{
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+.featured__font header {
+    text-align: center;
+}
+.featured__font p {
+ max-width: 300px;
+ margin: 12px;
+}
 .featured__roboto {
-
+    font-family: 'Roboto', sans-serif;
+    color: rosybrown;
 }
 .featured__noto-fonts {
-
+    font-family: 'Noto Serif JP', serif;
+    grid-template-rows: 300px auto;
+    color: royalblue;
 }
 .featured__open-sans {
-
+    font-family: 'Open Sans', sans-serif;
+    color: seagreen;
 }
