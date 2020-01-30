@@ -36,6 +36,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [axios](https://www.npmjs.com/package/axios)
 - [react-query](https://www.npmjs.com/package/react-query)
 - [react-in-viewport](https://www.npmjs.com/package/react-in-viewport)
+- [react-lazyload](https://www.npmjs.com/package/react-lazyload)
 ### Specification
 - header
     - logo
@@ -69,7 +70,7 @@ TODO: update since refactored
 
 ---- 
 ## TODO
-- [] bug/to-many-fonts-loading-gets-stuck
+- [x] bug/to-many-fonts-loading-gets-stuck
 - [] bug/OnpageBottom-state-update-on-unmounted
 - [] bug/basename-not-set-on-first-load
 - [] style/decorative-font-tiles-in-featured-page
