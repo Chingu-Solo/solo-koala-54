@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export default function retrieveFontFileUrl(name, files) {
+export default function retrieveFontFileUrl({name, files}) {
     const varient = files.hasOwnProperty('regular') ? 'regular' : files.hasOwnProperty('400') ? '400' : Object.keys(files)[0]; // fallbacks
     let url = files[varient]; 
     const method = 'GET';
