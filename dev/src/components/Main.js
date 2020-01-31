@@ -5,6 +5,7 @@ import { useRouteMatch } from "react-router-dom";
 import CollectionOpenButton from './CollectionOpenButton';
 import Collection from './Collection';
 import BackToTop from './BackToTop';
+import { ReactQueryConfigProvider } from 'react-query'
 
 export default function Main(props) {
     const match = useRouteMatch('/:filter'); // using path for query so queries can be bookmarked
@@ -13,6 +14,11 @@ export default function Main(props) {
     const [showCollection, setShowCollection] = useState(false);
     const [showCollectionButton, setShowCollectionButton] = useState(false);
     const refCloseCollectionIfNavChange = useRef(filter+gridView+customText);
+    const queryConfig = { 
+        refetchAllOnWindowFocus: false,
+        staleTime: 60 * 60 * 1000,
+        cacheTime: 60 * 60 * 1000,
+    };
     useEffect(() => {
         if (!showCollection && collection.list.length > 0) {
             setShowCollectionButton(true);
@@ -36,7 +42,10 @@ export default function Main(props) {
         <main className={`catalog ${showCollection ? 'collection-open' : gridView ? 'grid' : 'bar'}`}>
             {showCollectionButton && <CollectionOpenButton list={collection.list} showCollection={() => setShowCollection(true)}/>}
             <BackToTop/>
-            {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : <Cards {...{customText, filter, collection, fontSize}} />}
+            {showCollection ? <Collection {...collection} closeCollection={() => setShowCollection(false)}/> : 
+            <ReactQueryConfigProvider config={queryConfig}>
+                <Cards {...{customText, filter, collection, fontSize}} />
+            </ReactQueryConfigProvider>}
         </main>
     );
 }
