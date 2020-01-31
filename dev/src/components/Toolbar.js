@@ -17,7 +17,7 @@ export default function Toolbar(props) {
     let [withRedirect, setWithRedirect] = useState(false);
     const search = event => {
         setWithRedirect(true);
-        setQuery(event.target.value);
+        setQuery(event.target.value.replace(/\W/g, '')); 
     };
     const handleReset = () => {
         props.setCustomText('');
