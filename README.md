@@ -37,6 +37,7 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - [react-query](https://www.npmjs.com/package/react-query)
 - [react-in-viewport](https://www.npmjs.com/package/react-in-viewport)
 - [react-lazyload](https://www.npmjs.com/package/react-lazyload)
+- [react-springs](https://www.react-spring.io/)
 ### Specification
 - header
     - logo
