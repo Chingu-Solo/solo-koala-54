@@ -2,7 +2,7 @@ import React, {useState, useRef, useLayoutEffect} from 'react';
 import icon from '../images/backToTop.svg';
 import './styles/BackToTop.css';
 import throttle from '../utils/throttle';
-import {useTransition, animated} from 'react-spring'
+import {useTransition, animated} from 'react-spring';
 
 export default function BackToTop() {
     const [showButton, setShowButton] = useState(false);
