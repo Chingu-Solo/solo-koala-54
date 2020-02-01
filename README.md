@@ -76,8 +76,8 @@ TODO: update since refactored
 - [] bug/basename-not-set-on-first-load
 - [] style/decorative-font-tiles-in-featured-page
 - [] style/micro-animations
-    - [] fade in BackToTop
-    - [] collection list - untuck and tuck back when fonts are added
+    - [x] fade in BackToTop
+    - [x] collection list - untuck and tuck back when fonts are added
     - [] cards 
         - on render 
            - grid view - bobble
