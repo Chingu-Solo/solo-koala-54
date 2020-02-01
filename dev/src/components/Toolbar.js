@@ -11,6 +11,7 @@ import lightThemeIcon from '../images/lightthemeicon.svg';
 import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
 import {useSpring, animated} from 'react-spring';
+import { StyleSheet, css } from 'aphrodite';
 
 export default function Toolbar(props) {
     let filter = useRouteMatch('/:filter');
@@ -31,7 +32,16 @@ export default function Toolbar(props) {
         setWithRedirect(true);
     };
     let [searchBoxFocused, setSearchBoxFocused] = useState(false);
-    const searchAnimation = useSpring({transform: `scale(${searchBoxFocused ? 1.2 : 1})`})
+    const searchAnimation = useSpring({transform: `scale(${searchBoxFocused ? 1.2 : 1})`});
+    const circleSize = 12+(props.fontSize/8);
+    const sliderStyle = StyleSheet.create({
+        circleSize: {
+             '::-webkit-slider-thumb' : {
+                  width: circleSize+'px',
+                  height: circleSize+'px'
+        }
+    }
+   });
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
@@ -42,7 +52,7 @@ export default function Toolbar(props) {
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} value={props.customText} type="text" placeholder="Custom Text..." title="Custom Text..." />
                 <div className="toolbar__font-size">
                     <label htmlFor="toolbar__set-font-size" className="toolbar__font-size__label">Font Size: {props.fontSize}</label>
-                    <input id="toolbar__set-font-size" onChange={event => props.setFontSize(event.target.value)} className="toolbar__set-font-size clickable" type="range" min="4" max="128" step="2" value={props.fontSize} />
+                    <input id="toolbar__set-font-size" onChange={event => props.setFontSize(event.target.value)} className={"toolbar__set-font-size clickable "+css(sliderStyle.circleSize)} type="range" min="4" max="128" step="2" value={props.fontSize} />
                 </div>
             </div>
             <div className="toolbar__display-control">

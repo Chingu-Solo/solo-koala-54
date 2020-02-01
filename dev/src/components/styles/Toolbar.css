@@ -79,8 +79,9 @@
 }
 
 .toolbar__set-font-size[type='range'] {
-  overflow: hidden;
+  overflow: visible;
   max-width: 200px;
+  height: 16px;
   -webkit-appearance: none;
   background-color: none;
   outline: none;
