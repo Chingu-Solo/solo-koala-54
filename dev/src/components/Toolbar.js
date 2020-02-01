@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, createRef} from 'react';
 import {
     useRouteMatch,
     Redirect
@@ -10,6 +10,7 @@ import darkThemeIcon from '../images/darkthemeicon.svg';
 import lightThemeIcon from '../images/lightthemeicon.svg';
 import resetIcon from '../images/reseticon.svg';
 import searchIcon from '../images/searchicon.svg';
+import {useSpring, animated} from 'react-spring';
 
 export default function Toolbar(props) {
     let filter = useRouteMatch('/:filter');
@@ -29,11 +30,13 @@ export default function Toolbar(props) {
         window.scrollTo(0, 0);
         setWithRedirect(true);
     };
+    let [searchBoxFocused, setSearchBoxFocused] = useState(false);
+    const searchAnimation = useSpring({transform: `scale(${searchBoxFocused ? 1.2 : 1})`})
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
-                <img src={searchIcon} alt="" />
-                <input role="search" className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" value={query} />
+                <animated.img style={searchAnimation} src={searchIcon} alt="" />
+                <input onFocus={() => setSearchBoxFocused(true)} onBlur={() => setSearchBoxFocused(false)} role="search" className="toolbar__search__input" type="text" onChange={search} placeholder="Search" title="search" value={query} />
             </div>
              <div className="toolbar__font-control">
                 <input className="toolbar__custom-text" onChange={event => props.setCustomText(event.target.value)} value={props.customText} type="text" placeholder="Custom Text..." title="Custom Text..." />
