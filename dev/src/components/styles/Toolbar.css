@@ -30,6 +30,7 @@
     max-width: 200px;
     background: var(--main-bg-colour);
     color: var(--main-colour);
+    outline: none;
 }
 .dark .toolbar__search__input { 
   background: var(--dark-bg-colour);
@@ -61,6 +62,7 @@
     font-size: 24px;
     background: var(--main-bg-colour);
     color: var(--main-colour);
+    outline: none;
 }
 .dark .toolbar__custom-text { 
   background: var(--dark-bg-colour);
@@ -79,8 +81,9 @@
 }
 
 .toolbar__set-font-size[type='range'] {
-  overflow: hidden;
+  overflow: visible;
   max-width: 200px;
+  height: 16px;
   -webkit-appearance: none;
   background-color: none;
   outline: none;
