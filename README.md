@@ -71,6 +71,7 @@ TODO: update since refactored
 
 ---- 
 ## TODO
+- [] bug/search-makes-many-cards-load-at-once
 - [x] bug/to-many-fonts-loading-gets-stuck
 - [] bug/OnpageBottom-state-update-on-unmounted
 - [] bug/basename-not-set-on-first-load
@@ -87,6 +88,6 @@ TODO: update since refactored
     - [] search icon - grow and in circle flick through letters
     - [] logo on first page load - Y rotate circled letters sequentially
     - [] light/dark theme icon - to plain circle and back to moon
-    - [] font size slider - grow/shrink circle
-    - [] reset icon - spin 
+    - [x] font size slider - grow/shrink circle
+    - [x] reset icon - spin 
 ----
