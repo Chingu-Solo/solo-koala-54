@@ -1,4 +1,5 @@
 # solo-koala-54
+[Deployed App](https://chingu-solo.github.io/solo-koala-54/)
 
 ## Chingu Voyage Pre-Work Solo Project (Tier 2): *Favorite Fonts* ##
 An SPA that displays fonts from Google Fonts API sorted by popularity. Users can define a custom text, font size, and filter fonts by search term.
@@ -58,36 +59,10 @@ I choose to use an infinate scrolling method of loading more fonts over prealloc
 - featured
 - articles
 - about
-    
-### Structure
-#### Data flow
-TODO: update since refactored
-![Data flow Diagram](./assets/dataflow.png);
 
 ## Deployment Info
 ### To deploy 
 1. `cd dev/`
 2. `npm run deploy`
 
----- 
-## TODO
-- [] bug/search-makes-many-cards-load-at-once
-- [x] bug/to-many-fonts-loading-gets-stuck
-- [] bug/OnpageBottom-state-update-on-unmounted
-- [] bug/basename-not-set-on-first-load
-- [] style/decorative-font-tiles-in-featured-page
-- [] style/micro-animations
-    - [x] fade in BackToTop
-    - [x] collection list - untuck and tuck back when fonts are added
-    - [] cards 
-        - on render 
-           - grid view - bobble
-           - bar view - grow from center
-        - adding to collection - grow and bobble back
-        - removing from collection - confetti 
-    - [] search icon - grow and in circle flick through letters
-    - [] logo on first page load - Y rotate circled letters sequentially
-    - [] light/dark theme icon - to plain circle and back to moon
-    - [x] font size slider - grow/shrink circle
-    - [x] reset icon - spin 
 ----
