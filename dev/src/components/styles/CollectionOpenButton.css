@@ -8,7 +8,7 @@
     text-align: left;
     color: var(--main-colour);
     transform: translateX(calc(-100% + 32px));
-    transition: transform 1s;
+    transition: transform 0.5s ease-out;
     background: var(--off-main-bg-colour);
     display: grid;
     grid-template-columns: auto 24px;
