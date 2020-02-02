@@ -1,4 +1,4 @@
-import React, {useState, createRef} from 'react';
+import React, {useState} from 'react';
 import {
     useRouteMatch,
     Redirect
@@ -22,6 +22,7 @@ export default function Toolbar(props) {
         setQuery(event.target.value.replace(/\W/g, '')); 
     };
     const handleReset = () => {
+        setResetActive(true);
         props.setCustomText('');
         props.setFontSize(18);
         props.setGridView(true);
@@ -39,9 +40,19 @@ export default function Toolbar(props) {
              '::-webkit-slider-thumb' : {
                   width: circleSize+'px',
                   height: circleSize+'px'
+            }
         }
-    }
-   });
+    });
+    const [resetActive, setResetActive] = useState(false);
+    const resetSpin = useSpring( 
+        resetActive && { onRest: () => 
+            setResetActive(false), 
+            reset: true, 
+            from: {transform: 'rotate(0deg)'}, 
+            transform: 'rotate(-720deg)', 
+            config: { duration: 500} 
+        }
+    );
     return (
         <nav className="toolbar">
             <div className="toolbar__search">
@@ -56,10 +67,16 @@ export default function Toolbar(props) {
                 </div>
             </div>
             <div className="toolbar__display-control">
-                <button className="icon-button toolbar__layout-toggle" onClick={() => props.setGridView(!props.gridView)} title={props.gridView ? 'Bar view' : 'Grid view'}><img src={props.gridView ? barViewIcon : gridViewIcon} alt="" /></button>
-                <button className="icon-button toolbar__theme-toggle" onClick={() => props.setLightTheme(!props.lightTheme)} title={props.lightTheme ? 'Dark theme' : 'Light theme'}><img src={props.lightTheme ? darkThemeIcon : lightThemeIcon} alt="" /></button>
+                <button className="icon-button toolbar__layout-toggle" onClick={() => props.setGridView(!props.gridView)} title={props.gridView ? 'Bar view' : 'Grid view'}>
+                    <img src={props.gridView ? barViewIcon : gridViewIcon} alt="" />
+                </button>
+                <button className="icon-button toolbar__theme-toggle" onClick={() => props.setLightTheme(!props.lightTheme)} title={props.lightTheme ? 'Dark theme' : 'Light theme'}>
+                    <img src={props.lightTheme ? darkThemeIcon : lightThemeIcon} alt="" />
+                </button>
             </div>
-            <button className="icon-button toolbar__reset" onClick={handleReset} title="reset"><img className="toolbar__reset" src={resetIcon} alt="" /></button>
+            <button className="icon-button toolbar__reset" onClick={handleReset} title="reset">
+                <animated.img style={resetSpin} className="toolbar__reset" src={resetIcon} alt="" />
+            </button>
             {withRedirect && <Redirect to={`${query}`}/>}
         </nav>
     )
