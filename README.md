@@ -1,5 +1,7 @@
 # solo-koala-54
-[Deployed App](https://chingu-solo.github.io/solo-koala-54/)
+
+[![app deployed](./dev/src/images/logo.svg) (deployment)
+](https://chingu-solo.github.io/solo-koala-54/)
 
 ## Chingu Voyage Pre-Work Solo Project (Tier 2): *Favorite Fonts* ##
 An SPA that displays fonts from Google Fonts API sorted by popularity. Users can define a custom text, font size, and filter fonts by search term.
