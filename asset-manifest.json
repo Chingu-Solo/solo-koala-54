@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/solo-koala-54/static/css/main.48a04285.chunk.css",
-    "main.js": "/solo-koala-54/static/js/main.fc471376.chunk.js",
-    "main.js.map": "/solo-koala-54/static/js/main.fc471376.chunk.js.map",
-    "runtime-main.js": "/solo-koala-54/static/js/runtime-main.5a53eb88.js",
-    "runtime-main.js.map": "/solo-koala-54/static/js/runtime-main.5a53eb88.js.map",
-    "static/js/2.7a216511.chunk.js": "/solo-koala-54/static/js/2.7a216511.chunk.js",
-    "static/js/2.7a216511.chunk.js.map": "/solo-koala-54/static/js/2.7a216511.chunk.js.map",
-    "static/js/3.be86bc4b.chunk.js": "/solo-koala-54/static/js/3.be86bc4b.chunk.js",
-    "static/js/3.be86bc4b.chunk.js.map": "/solo-koala-54/static/js/3.be86bc4b.chunk.js.map",
+    "main.css": "/solo-koala-54/static/css/main.2f64824c.chunk.css",
+    "main.js": "/solo-koala-54/static/js/main.cb453f3b.chunk.js",
+    "main.js.map": "/solo-koala-54/static/js/main.cb453f3b.chunk.js.map",
+    "runtime-main.js": "/solo-koala-54/static/js/runtime-main.1fc0578c.js",
+    "runtime-main.js.map": "/solo-koala-54/static/js/runtime-main.1fc0578c.js.map",
+    "static/js/2.a72bae20.chunk.js": "/solo-koala-54/static/js/2.a72bae20.chunk.js",
+    "static/js/2.a72bae20.chunk.js.map": "/solo-koala-54/static/js/2.a72bae20.chunk.js.map",
+    "static/js/3.c6060a0e.chunk.js": "/solo-koala-54/static/js/3.c6060a0e.chunk.js",
+    "static/js/3.c6060a0e.chunk.js.map": "/solo-koala-54/static/js/3.c6060a0e.chunk.js.map",
     "index.html": "/solo-koala-54/index.html",
-    "precache-manifest.ee69eea75446f3609995f2a60afb77e3.js": "/solo-koala-54/precache-manifest.ee69eea75446f3609995f2a60afb77e3.js",
+    "precache-manifest.115cc9d2522f4fcea0d76912ce1a7e43.js": "/solo-koala-54/precache-manifest.115cc9d2522f4fcea0d76912ce1a7e43.js",
     "service-worker.js": "/solo-koala-54/service-worker.js",
-    "static/css/main.48a04285.chunk.css.map": "/solo-koala-54/static/css/main.48a04285.chunk.css.map",
-    "static/js/2.7a216511.chunk.js.LICENSE": "/solo-koala-54/static/js/2.7a216511.chunk.js.LICENSE",
+    "static/css/main.2f64824c.chunk.css.map": "/solo-koala-54/static/css/main.2f64824c.chunk.css.map",
+    "static/js/2.a72bae20.chunk.js.LICENSE": "/solo-koala-54/static/js/2.a72bae20.chunk.js.LICENSE",
     "static/media/addtoclipboard.svg": "/solo-koala-54/static/media/addtoclipboard.7711d277.svg",
     "static/media/addtocollectionicon.svg": "/solo-koala-54/static/media/addtocollectionicon.2b65d20d.svg",
     "static/media/backToTop.svg": "/solo-koala-54/static/media/backToTop.54c1e9bc.svg",
@@ -32,9 +32,9 @@
     "static/media/wiggerlyline.svg": "/solo-koala-54/static/media/wiggerlyline.9f59d788.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5a53eb88.js",
-    "static/js/2.7a216511.chunk.js",
-    "static/css/main.48a04285.chunk.css",
-    "static/js/main.fc471376.chunk.js"
+    "static/js/runtime-main.1fc0578c.js",
+    "static/js/2.a72bae20.chunk.js",
+    "static/css/main.2f64824c.chunk.css",
+    "static/js/main.cb453f3b.chunk.js"
   ]
 }

@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "3ec1cf9f5ac3aa3a1bdb35a7aec38787",
+    "revision": "cb88ead41233c00e702620cb1eafb3cf",
     "url": "/solo-koala-54/index.html"
   },
   {
-    "revision": "10c97a1c9ba045eb63b7",
-    "url": "/solo-koala-54/static/css/main.48a04285.chunk.css"
+    "revision": "3b79a738dbb04d25f8c7",
+    "url": "/solo-koala-54/static/css/main.2f64824c.chunk.css"
   },
   {
-    "revision": "42575d53cadb6ddea957",
-    "url": "/solo-koala-54/static/js/2.7a216511.chunk.js"
+    "revision": "d59fa9a8af0e207ff553",
+    "url": "/solo-koala-54/static/js/2.a72bae20.chunk.js"
   },
   {
     "revision": "e928fe768baa9832b5bc57eae021f30c",
-    "url": "/solo-koala-54/static/js/2.7a216511.chunk.js.LICENSE"
+    "url": "/solo-koala-54/static/js/2.a72bae20.chunk.js.LICENSE"
   },
   {
-    "revision": "dd953e3e06fc6cae016c",
-    "url": "/solo-koala-54/static/js/3.be86bc4b.chunk.js"
+    "revision": "e7a07617d9ad11dd6752",
+    "url": "/solo-koala-54/static/js/3.c6060a0e.chunk.js"
   },
   {
-    "revision": "10c97a1c9ba045eb63b7",
-    "url": "/solo-koala-54/static/js/main.fc471376.chunk.js"
+    "revision": "3b79a738dbb04d25f8c7",
+    "url": "/solo-koala-54/static/js/main.cb453f3b.chunk.js"
   },
   {
-    "revision": "73fabd0adf3fefcf26ca",
-    "url": "/solo-koala-54/static/js/runtime-main.5a53eb88.js"
+    "revision": "c121a3ff1e32f832b1be",
+    "url": "/solo-koala-54/static/js/runtime-main.1fc0578c.js"
   },
   {
     "revision": "7711d27784341618c98a6c73edea3e7d",
