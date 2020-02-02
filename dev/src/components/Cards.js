@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../components/Card';
 import { useQuery } from 'react-query';
 import fetchFonts from '../controllers/fetchFonts';
@@ -47,6 +47,9 @@ export default function Cards(props) {
         }  
         return newCards;
     }
+    useEffect(() => {
+        setNCards(20);
+    }, [filter]);
     return (<>
         {!data ? 
         <img src={loading} alt="loading..." /> : error ? 
