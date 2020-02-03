@@ -71,14 +71,11 @@ TODO: update since refactored
 
 ---- 
 ## TODO
-- [] bug/search-makes-many-cards-load-at-once
-- [x] bug/to-many-fonts-loading-gets-stuck
+- [] bug/CollectionOpenButton-tuck-toggle-gets-swapped
 - [] bug/OnpageBottom-state-update-on-unmounted
 - [] bug/basename-not-set-on-first-load
 - [] style/decorative-font-tiles-in-featured-page
 - [] style/micro-animations
-    - [x] fade in BackToTop
-    - [x] collection list - untuck and tuck back when fonts are added
     - [] cards 
         - on render 
            - grid view - bobble
@@ -88,6 +85,4 @@ TODO: update since refactored
     - [] search icon - grow and in circle flick through letters
     - [] logo on first page load - Y rotate circled letters sequentially
     - [] light/dark theme icon - to plain circle and back to moon
-    - [x] font size slider - grow/shrink circle
-    - [x] reset icon - spin 
 ----
